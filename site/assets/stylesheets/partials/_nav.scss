@@ -31,7 +31,7 @@ nav{
       width: 100%;
       background: $secondary-color;
       padding: $base-space/2.5 0;
-      border-top: 1px solid rgba(white, 0.1);
+      border-top: 1px solid rgba($darkgrey, 0.05);
 
       @include query-at($nav-breakpoint){
         padding: $base-space/4 0;
@@ -53,14 +53,14 @@ nav{
         font-size: 0.8em;
         text-decoration: none;
         text-transform: uppercase;
-        color: $lightgrey;
+        color: $text-color + 30;
         display: block; width: 100%; height: 100%;
         font-weight: 400;
         font-family: $base-heading-font;
         letter-spacing: 1px;
         @include single-transition(all, 250ms);
 
-        &.current, &:hover{  color: white }
+        &.current, &:hover{  color: $text-color }
       }
 
       @include query-at($nav-breakpoint){
