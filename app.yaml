@@ -1,9 +1,9 @@
 --- 
-site: Inkpress
-tagline: A small, lightweight, dead simple content management system built on free & open source technologies.
+site: Brian G.
+tagline: Christian, husband, front-end web developer & designer working and living out of the Los Angeles area.
 ga: UX-XXXXXX
 twitter: brianmgonzalez
-repo_url: git@github.com:briangonzalez/inkpress.git
+repo_url: git@github.com:briangonzalez/briangonzalez.org.git
 authorized_users: 
   brian: b419dc186c1a9d5ea75aeefbfa6537a5
 google_fonts_families:
@@ -12,8 +12,6 @@ google_fonts_families:
   - PT+Sans:400,700,400italic,700italic
 nav: 
   Home: " /home"
-  Getting Started: " /getting-started"
-  Documentation: " /documentation"
   About: " /about"
   Twitter: http://twitter.com/brianmgonzalez
-  Github: http://github.com/briangonzalez/inkpress
+  Github: http://github.com/briangonzalez

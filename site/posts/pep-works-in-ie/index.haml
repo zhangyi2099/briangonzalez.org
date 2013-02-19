@@ -1,0 +1,30 @@
+---
+title:    Pep Now works in IE6/7/8/9
+author:   Brian G.
+date:     June 8, 2012
+---
+
+:markdown
+
+  By popular demand, [pep](http://pep.briangonzalez.org) now works in older versions of Internet Explorer, namely IE7 and IE8. By altering the code to watch for `mouseup` events on the `document` as opposed to the `window`, I was able to make Pep IE-friendly. However, we still dont have a fallback for easing.
+
+  Here's a little more on the IE implementation of `mouseup`. For some reason, < IE9 doesn't allow this: 
+
+      $(window).bind('mouseup', function(){ /* doesn't fire */ });
+    {:lang='javascript'}
+
+  ## Why?
+  Because the `click`, `mousedown`, `mouseup`, `dblclick` events aren't available on the __window__. The IE-only issue (err...feature?) is well-documented [here](http://www.quirksmode.org/dom/events/click.html). Binding `click`, `mousedown`, `mouseup`, `dblclick` to the __document__ does work, however:
+
+      $(document).bind('mouseup', function(){ /* fires! */ });
+    {:lang='javascript'}
+
+    [Enjoy Pep](http://pep.briangonzalez.org) and let me know about any issues via [twitter](https://twitter.com/brianmgonzalez) or on [github](https://github.com/briangonzalez/jquery.pep.js/issues?direction=desc&sort=created&state=open).
+
+  ## Demos
+  Check out the following demo videos:
+
+  - [Internet Explorer 6](https://www.youtube.com/watch?v=acc92L-Lhes)
+  - [Internet Explorer 7](https://www.youtube.com/watch?v=8Qxo4q4ofVU)
+  - [Internet Explorer 8](https://www.youtube.com/watch?v=WWKq3ovMbOQ)
+  - [Internet Explorer 9](https://www.youtube.com/watch?v=xYxQdkyzDnI)

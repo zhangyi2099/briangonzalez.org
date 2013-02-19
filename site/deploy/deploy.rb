@@ -3,13 +3,13 @@
 case ENV['DEPLOY']
 when 'production'
   puts ' ** Deploy to production  **************************************'
-  set :domain, "inkpress.briangonzalez.org"
-  set :application, "inkpress.briangonzalez.org"
+  set :domain, "briangonzalez.org"
+  set :application, "briangonzalez.org"
 else
   # Deploy to staging by default.
   puts ' ** Deploying to stage **************************************'
-  set :domain, "stage-inkpress.briangonzalez.org"
-  set :application, "stage-inkpress.briangonzalez.org"
+  set :domain, "stage.briangonzalez.org"
+  set :application, "stage.briangonzalez.org"
 end
 
 # Be sure to set your remote repo URL in ./app.yaml
@@ -35,7 +35,6 @@ after "deploy:restart", "deploy:cleanup"
 
 # create our logs
 before 'deploy:restart', "deploy:create_logs"
-before 'deploy:restart', "deploy:checkout_master"
 
 # If you are using Passenger mod_rails uncomment this:
 namespace :deploy do
@@ -49,10 +48,6 @@ namespace :deploy do
     run "if [ ! -d #{logs} ]; then #{try_sudo} mkdir #{logs}; fi"
     run "if [ ! -f #{access} ]; then #{try_sudo} touch #{access}; fi"
     run "if [ ! -f #{error} ];  then #{try_sudo} touch #{error}; fi"
-  end
-
-  task :checkout_master do
-    run "cd '#{current_path}' && git checkout master && git pull"
   end
 
   task :restart, :roles => :app, :except => { :no_release => true } do
