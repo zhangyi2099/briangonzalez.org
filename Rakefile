@@ -20,13 +20,15 @@ namespace :ink do
 
     if continue == 'yes'
 
-      clean_folder = File.join('application', 'clean')
+      clean_folder  = File.join('application', 'clean')
       site_folder   = './site/'
+      public_folder = './public/'
 
       # First Remove
       # -----------------------
       FileUtils.rm_f('./app.yaml')
       FileUtils.rm_rf( File.join(site_folder, 'assets', 'images'), :verbose => true )
+      FileUtils.rm_rf( File.join(public_folder, 'ink_static'), :verbose => true )
 
       to_keep       = ['home', 'assets', 'error', 'not_found'].map{|f| "#{site_folder}#{f}"}
       Dir.glob( site_folder + '*').each do |f|
