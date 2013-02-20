@@ -36,6 +36,7 @@ after "deploy:restart", "deploy:cleanup"
 # create our logs
 before 'deploy:restart', "deploy:create_logs"
 before 'deploy:restart', "deploy:checkout_master"
+before 'deploy:restart', "deploy:install"
 
 # If you are using Passenger mod_rails uncomment this:
 namespace :deploy do
@@ -53,6 +54,10 @@ namespace :deploy do
 
   task :checkout_master do
     run "cd '#{current_path}' && git checkout master && git pull"
+  end
+
+  task :install, :roles => :app do
+    run "cd #{current_release} && #{try_sudo} bundle install"
   end
 
   task :restart, :roles => :app, :except => { :no_release => true } do
