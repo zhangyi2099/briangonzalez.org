@@ -123,7 +123,7 @@ $z-zen-toggle: 103;
     border-left: 1px solid rgba($admin-lightgrey, 0.5);
     z-index: $z-preview;
     display: block;
-    overflow: hidden;
+    overflow: scroll;
     padding: 0; margin: 0;
     -webkit-overflow-scrolling: touch;
     @include single-transition(all, 200ms);
