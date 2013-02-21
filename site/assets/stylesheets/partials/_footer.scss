@@ -27,7 +27,7 @@ div[role='main']{
       margin-right: -0.6em;
       height: 16px;
       text-align: center;
-      @include filter(opacity(30%))
+      opacity: 0.2;
     }
 
   }

@@ -13,6 +13,12 @@ date:     May 21, 2012
 
   I built [jquery.pep.js](http://pep.briangonzalez.org), which not only works on touch devices, it's kinetic (things ease nicely into place).
 
+  ## Small Pep Example
+
+#pep-parent
+  #pep
+
+:markdown
   Check out the [official demos here](http://pep.briangonzalez.org/demo) or follow/fork on [Github](https://github.com/briangonzalez/jquery.pep.js). 
 
 %p
@@ -36,3 +42,17 @@ date:     May 21, 2012
 
 %a.button{ :href => 'http://pep.briangonzalez.org' }
   Launch Pep
+
+- content_for :javascript_files do
+  <script src='https://raw.github.com/briangonzalez/jquery.pep.js/master/src/jquery.pep.js'></script>
+
+- content_for :javascripts do
+  :javascript
+    $(document).ready(function(){  
+      $('#pep').pep({ useCSSTranslation: false });
+    });
+
+- content_for :styles do 
+  :css
+    #pep-parent{ height: 300px; border: 10px solid #f6f6f6; margin-bottom: 30px;  }
+    #pep{ width: 100px; height: 100px; background: blue; }
