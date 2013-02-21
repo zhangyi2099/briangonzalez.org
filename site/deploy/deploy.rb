@@ -1,6 +1,3 @@
-require "bundler/capistrano"
-require "rvm/capistrano"
-
 # Handle various stages
 case ENV['DEPLOY']
 when 'production'
