@@ -1,11 +1,11 @@
 ---
 title:  About 
-flags:  ['titleize']
 ---
 
-:markdown
+%img.me{ :src => '/uploads/me.png' }
 
-  ## About Me
+:markdown 
+  ## About Me 
   In 2007, I received my Bachelor's of Science in Electrical Engineering from [California Polytechnic State University, San Luis Obispo](http://www.calpoly.edu/). 
 
   After graduation, I worked as a High School Youth Pastor at [FPCSLO](http://fpcslo.org/) for 3 years where I was able to spend time with teenage boys and girls and take groups of kids to serve the poor in Guatemala, the Dominican Republic, and Las Vegas.
@@ -28,3 +28,7 @@ flags:  ['titleize']
   You can contact me on [Twitter](http://twitter.com/brianmgonzalez), fork something of mine on [Github](http://twitter.com/brianmgonzalez), or check out some of my latest web experiments on [Codepen](http://codepen.io/briangonzalez). Sometimes (inefrequently?), I respond to [email](mailto:me@briangonzalez.org).
 
 {file:follow_button.haml}
+
+- content_for :styles do 
+  :css
+    .me{ max-width: 320px !important; margin: 0 auto 30px auto; display: block; opacity: 0.85 } 
