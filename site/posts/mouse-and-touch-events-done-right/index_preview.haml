@@ -1,0 +1,61 @@
+---
+title:    Mouse & Touch Events Done Right
+author:   Brian G.
+date:     February 22, 2013
+flags:    ['no-publish']
+---
+
+.mouse-and-touch-events-done-right-devices
+  %i.icon-tablet
+
+:markdown  
+  ---
+
+  Lately I've noticed that we as front-end developers have grown impatient as we wait for web technologies to "catch up" with their native counterparts. No matter how much we try as front-end devs to make the case for the web as the de facto platform, there's still those little screen flickers, buttons that don't render quite correctly, borders that seem just a pixel off, or jumpy animations that ruin every argument we've ever made for the web.
+
+  So, like good engineers, we've found ways to fix some of the web's weaknesses. One of the main places we've tried to "shim" the web to be more like native is in the mobile browser.
+
+  ## The 300ms Touch Delay 
+  Some folks over at Google have written an article, [Creating Fast Buttons for Mobile Web Applications](https://developers.google.com/mobile/articles/fast_buttons), which chronicles some of the "limitations" of user interfaces on the mobile web, and necessary steps one can take to fix them.
+
+  The article points out the __300ms delay__ that the mobile browser introduces and why:
+
+  >  The reason for this is that the browser is waiting to see if you are actually performing a double tap.
+  
+  They forget to mention, however, two other main design decisions in the 300ms delay:
+    1. Scrolling button lists
+    2. Cancel-able button interactions
+
+  ## Scrolling buttons with Google's Fast Buttons
+  Take for instance the follow UI with the fast button implementation:
+
+%ul.scrolling-button-list
+  -10.times do |i|
+    %li
+      = "ITEM #{i}"
+:markdown
+  ## Scrolling buttons without Google's Fast Buttons
+  Take for instance the follow UI with the fast button implementation:
+
+%ul.scrolling-button-list
+  -10.times do |i|
+    %li
+      = "ITEM #{i}"
+
+:markdown
+  ## Cross-Platform Interaction
+      var startEvent = Modernizr.touch ? 'touchstart' : 'click';
+      var endEvent   = Modernizr.touch ? 'touchend' : 'mouseup';
+      var moveEvents = Modernizr.touch ? 'touchmove' : 'mousemove';
+    {:lang=javascript}  
+
+- content_for :javascripts do
+  :javascript
+    console.log('hi')
+
+- content_for :styles do 
+  :css
+    .mouse-and-touch-events-done-right-devices { font-size: 16em; text-align: center; margin: 0.25em 0; }
+    
+    div[role=main] ul.scrolling-button-list{ width: 90%; list-style-type: none; border: 10px solid #eee; height: 250px; overflow: hidden; overflow-y: scroll; padding: 0; margin: 0 auto !important; }
+    div[role=main] ul.scrolling-button-list li{ background: #569ff7; text-align: center; list-style-type: none; padding: 10px; margin: 5px; color: white; }
