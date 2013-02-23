@@ -29,5 +29,5 @@ div[role=main] .cancelable-button-demo a.fast               { background: #3cb0e
 div[role=main] .cancelable-button-demo a.normal             { background: #f0bf69; }
 div[role=main] .cancelable-button-demo a.activated          { background: #d74b3e }
 
-body.mouse-and-touch-events-done-right hr.big               { border: 3px solid #f6f6f6; margin-top: 500px;}
+body.mouse-and-touch-events-done-right hr.big               { border: 3px solid #f6f6f6; margin-top: 200px;}
 

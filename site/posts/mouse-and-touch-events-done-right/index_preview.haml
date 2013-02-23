@@ -80,7 +80,7 @@ date:     February 23, 2013
 
   Furthermore, for buttons in your user interface that have more serious implications (e.g. buttons that __delete__ something, buttons that send a irretractable message), don't apply the __fast button__ technique. By not applying the fast button technique, you're allowing your users the option of bailing out of an action at the last moment.  
 
-  My main tip: __use your best judgement__. Take special care to _let the user do what they want to do_.
+  My main tip: __use your best judgement__. Take special care to _let the user do what they want to do_, and don't force your users into interactions they don't expect on the platform they're currently using.
 
 
 %hr.big
@@ -90,7 +90,7 @@ date:     February 23, 2013
   A tip for handling touch events in Javascript
 
 :markdown
-  I found that one of the best ways to handle touch/click events gracefully is like so:
+  First off, make sure you understand and _use_ [Modernizr](http://modernizr.com/) and look at Modernizr's [touch test suite](http://modernizr.github.com/Modernizr/touch.html). I found that one of the best ways to handle touch/click events gracefully is, with the help of Modernizr, like so:
 
       var events        = {}
       events.startEvent = Modernizr.touch ? 'touchstart' : 'click';
