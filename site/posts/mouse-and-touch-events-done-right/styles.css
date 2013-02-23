@@ -1,0 +1,33 @@
+.mouse-and-touch-events-done-right-devices { 
+  font-size: 22em; text-align: center; margin: 0.1em 0; 
+}
+
+div[role=main] ul.scrolling-button-list{ 
+  width: 100%; list-style-type: none; border: 10px solid #eee; height: 350px; overflow: 
+  hidden; overflow-y: scroll; padding: 0; margin: 3em auto; 
+  border-radius: 10px;
+}
+
+div[role=main] ul.scrolling-button-list.fast    { border-color: #3cb0e3; }
+div[role=main] ul.scrolling-button-list.normal  { border-color: #f0bf69; }
+
+div[role=main] ul.scrolling-button-list li{ 
+  background: #444; 
+  text-align: center; list-style-type: none;
+  padding: 10px; margin: 5px; color: white; 
+  cursor: pointer;
+}
+
+div[role=main] ul.scrolling-button-list.fast    li{ background: #3cb0e3;}
+div[role=main] ul.scrolling-button-list.normal  li{ background: #f0bf69 }
+div[role=main] ul.scrolling-button-list li.activated{ background: #d74b3e }
+
+div[role=main] .cancelable-button-demo                      { border: 10px solid #eee; border-radius: 10px; margin: 3em auto; }
+div[role=main] .cancelable-button-demo a                    { display: block; color: white; padding: 10px; text-align: center; margin: 5px; }
+div[role=main] .cancelable-button-demo a:hover              { opacity: 0.9; }
+div[role=main] .cancelable-button-demo a.fast               { background: #3cb0e3 }
+div[role=main] .cancelable-button-demo a.normal             { background: #f0bf69; }
+div[role=main] .cancelable-button-demo a.activated          { background: #d74b3e }
+
+body.mouse-and-touch-events-done-right hr.big               { border: 3px solid #f6f6f6; margin-top: 500px;}
+
