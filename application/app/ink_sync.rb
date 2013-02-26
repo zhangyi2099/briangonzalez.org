@@ -15,14 +15,16 @@ module Sinatra
 
       def git_sync
         branch = production? ? 'deploy' : 'master'
-        cmds = [
-                "git add .",
-                "git commit -am 'Saved Inkpress site @ #{Time.now.to_datetime.strftime "%a, %d %b %Y, %l:%M%P"}'",
+        cmds_1 = [ 'git add', "git commit -am 'Saved Inkpress site @ #{Time.now.to_datetime.strftime "%a, %d %b %Y, %l:%M%P"}'" ]
+        cmds_2 = [
                 "git pull",
                 "git push"
                ] 
 
-        git_root { return `#{cmds.join('; ')}` } 
+        git_root { 
+          `#{cmds_1.join('; ')}`
+          return `#{cmds_2.join('; ')}` 
+        } 
       end
 
       def git_root(&blk)
