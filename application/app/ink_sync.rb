@@ -16,10 +16,10 @@ module Sinatra
       def git_sync
         output = ''
         git_root { 
-          output << system "git add ."
-          output << system "git commit -am 'Saved Inkpress site @ #{Time.now.to_datetime.strftime "%a, %d %b %Y, %l:%M%P"}'"
-          output << system "git pull"
-          output << system "git push"
+          system "git add ."
+          system "git commit -am 'Saved Inkpress site @ #{Time.now.to_datetime.strftime "%a, %d %b %Y, %l:%M%P"}'"
+          system "git pull"
+          system "git push"
         } 
         return output
       end
