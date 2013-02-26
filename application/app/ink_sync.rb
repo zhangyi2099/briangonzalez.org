@@ -19,7 +19,7 @@ module Sinatra
           system "git add ."
           system "git commit -am 'Saved Inkpress site @ #{Time.now.to_datetime.strftime "%a, %d %b %Y, %l:%M%P"}'"
           system "git pull"
-          system "git push"
+          output << `git push`
         } 
         return output
       end
