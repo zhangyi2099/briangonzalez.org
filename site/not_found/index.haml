@@ -1,7 +1,12 @@
 ---
-title: 400! Page Not Found 
-flags: ['titleize']
+title: Page Not Found
+flags: [titleize]
 ---
-
 :markdown
-  Well, that's embarassing. We couldn't find that page. Forgive us.
+  Well, that's embarassing. That page couldn't be found. We didn't mean for this to happen.
+
+  ![check yourself](/uploads/checkyourself.gif){:class=checkyourself}
+
+- content_for :styles do 
+  :css
+    .checkyourself{ margin-top: 2em; }

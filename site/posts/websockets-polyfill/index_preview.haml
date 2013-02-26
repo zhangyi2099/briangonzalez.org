@@ -1,0 +1,39 @@
+---
+title:    A PolyFill for WebSockets
+author:   Brian G.
+date:     February 25, 2013
+---
+
+:markdown
+  
+  IE9 and below require the use of a Flash-based polyfill. I've had good luck with [web-socket-js](https://github.com/gimite/web-socket-js).
+
+  The main "gotcha" involved with the Flash fallback included in [web-socket-js](https://github.com/gimite/web-socket-js) is the _Flash socket policy file_, which is outlined [here](http://www.lightsphere.com/dev/articles/flash_socket_policy.html). Basically, for security, socket connections in Flash require a policy XML file hosted on port __843__ of the same location the websockets server is running. It should return the following:
+
+      <cross-domain-policy>
+        <allow-access-from domain="*" to-ports="*" />
+      </cross-domain-policy>
+
+  So, for instance, if you're WebSockets server is running on `localhost:1234`, you'll need a policy server running on `localhost:843`. Here's a simple Ruby Flash Socket Policy Server (which should only be used for testing locally).
+
+  ## A simple Flash Socket Policy Server
+  
+  Place the following in a file called `flash_socket_policy_server.rb`:
+
+      require "socket"
+
+      puts "Starting policy server..."
+
+      webserver = TCPServer.new(nil, 843)
+      while (session = webserver.accept)
+        session.print('<cross-domain-policy><allow-access-from domain="*" to-ports="*" /></cross-domain-policy>')
+        session.close
+      end
+    {:lang=ruby}
+
+  Then fire it up like so:
+      
+      sudo ruby flash_socket_policy_server.rb
+    {:lang=shell}
+
+  __Note__ the `sudo` command, which is needed because port `843` is so low.
