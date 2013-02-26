@@ -9,9 +9,10 @@ module Sinatra
         f = nil;
         git_root { 
           f = open("| git status") 
-          f.close
         } 
-        f.read
+        output = f.read
+        f.close
+        output
       end
 
       def git_pull
