@@ -6,8 +6,12 @@ module Sinatra
     module Helpers
 
       def git_status
-        git_root { system("git status") } 
-        "Status."
+        f = nil;
+        git_root { 
+          f = open("| git status") 
+          f.close
+        } 
+        f.read
       end
 
       def git_pull
@@ -25,7 +29,7 @@ module Sinatra
           push    = system("git push") if pull
         } 
         success = add && commit && pull && push
-        success ? "Sync'd succesfully." : "Error ecountere while syncing."
+        success ? "Sync'd succesfully." : "Error encountered while syncing."
       end
 
       def git_root(&blk)
