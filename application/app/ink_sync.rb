@@ -19,9 +19,9 @@ module Sinatra
           system "git add ."
           system "git commit -am 'Saved Inkpress site @ #{Time.now.to_datetime.strftime "%a, %d %b %Y, %l:%M%P"}'"
           system "git pull"
-          output << `git push`
+          system "git push"
         } 
-        return output
+        'Done syncing.'
       end
 
       def git_root(&blk)
