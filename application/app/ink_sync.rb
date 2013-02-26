@@ -6,22 +6,26 @@ module Sinatra
     module Helpers
 
       def git_status
-        git_root { return `git status` } 
+        git_root { system("git status") } 
+        "Status."
       end
 
       def git_pull
-        git_root { return `git pull` }
+        pull = false
+        git_root { pull = system("git pull") }
+        pull ? "Succesfully pulled site." : "Error while pulling." 
       end
 
       def git_sync
-        output = ''
+        add, commit, pull, push = false, false, false, false
         git_root { 
-          system "git add ."
-          system "git commit -am 'Saved Inkpress site @ #{Time.now.to_datetime.strftime "%a, %d %b %Y, %l:%M%P"}'"
-          system "git pull"
-          system "git push"
+          add     = system("git add .") 
+          commit  = system("git commit -am 'Saved Inkpress site @ #{Time.now.to_datetime.strftime "%a, %d %b %Y, %l:%M%P"}'") if add
+          pull    = system("git pull") if commit 
+          push    = system("git push") if pull
         } 
-        'Done syncing.'
+        success = add && commit && pull && push
+        success ? "Sync'd succesfully." : "Error ecountere while syncing."
       end
 
       def git_root(&blk)
