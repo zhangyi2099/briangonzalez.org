@@ -1,0 +1,16 @@
+---
+title:    Overriding Underscore's Default Template Syntax
+author:   brian
+date:     April 11, 2013
+---
+
+:markdown
+  Whenever I use [Javascript micro-templating](https://developer.mozilla.org/en-US/docs/JavaScript_templates) in [Underscore.js](http://underscorejs.org/), I prefer the following syntax:
+
+
+      _.templateSettings = {
+        evaluate:    /\{\%([\s\S]+?)\%\}/g,             // {% console.log("blah") %}
+        interpolate: /\{\{[^#\{]([\s\S]+?)[^\}]\}\}/g,  // {{ title }}
+        escape:      /\{\{\{([\s\S]+?)\}\}\}/g,         // {{{ title }}}
+      }
+    {:lang=javascript}
