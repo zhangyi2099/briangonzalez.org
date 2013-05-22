@@ -5,17 +5,21 @@ div[role="main"]{
     margin-bottom: $base-space;
     border-bottom: 0;
 
-    h1 { margin-bottom: 0; }
+    h1 { margin-bottom: $base-space/2; }
     h2 { font-size: 1.5em; }
 
     .meta{
       font-size: 0.8em;
+      text-align: center;
+
+      @include query-at($main-breakpoint) { text-align:left; }
 
       time, .author   { font-weight: 700; color: $lightgrey - 10; text-transform: uppercase;  }
       .between        { color: $lightgrey + 10;  
                         display: inline-block; margin: 0 0.4em; font-weight: 200; 
                         font-size: 0.9em; letter-spacing: 1px;
                       }
+      hr              { border-color: $super-lightgrey + 3; }
     }
 
   }

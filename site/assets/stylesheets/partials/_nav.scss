@@ -36,7 +36,6 @@ nav{
       border-top: 1px solid rgba(white, 0.1);
 
       @include query-at($nav-breakpoint){
-        padding: $base-space/4 0;
         margin-right: 1em;
         margin-top: none;
         padding: 0;
@@ -62,7 +61,7 @@ nav{
         letter-spacing: 1px;
         @include single-transition(all, 250ms);
 
-        &.current, &:hover{  color: white }
+        &.current, &:hover{ color: white; }
       }
 
       @include query-at($nav-breakpoint){
@@ -75,7 +74,6 @@ nav{
             color: $primary-color; 
             border-bottom: 1px solid rgba($primary-color, 0.2); 
             border-top: 1px solid rgba($primary-color, 0.2);
-            &:hover{ padding-left: 5px; };
           }
         }
       }
@@ -89,6 +87,7 @@ nav{
           &.current, &:hover{ 
             border: none;
             color: $primary-color;
+            @include transform(translateX(2px))
           }
         }
       }
