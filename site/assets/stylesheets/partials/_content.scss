@@ -47,8 +47,8 @@
     margin-bottom: $base-space/3;
   }
 
-  p                   { overflow: visible; }
-  p:first-of-type     { font-size: 135%; };
+  p          { overflow: visible; }
+  .title + p { font-size: 135%; };
 
   article img { width: 100%; }
 
