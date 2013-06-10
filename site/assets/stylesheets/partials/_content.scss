@@ -27,12 +27,10 @@
   h1{
     font-size: 2em;
     font-weight: 300;
-    text-align: center;
-    @include pad(1,1);
 
     @include query-at($breakpoint-1)    { font-size: 2.3em }
     @include query-at($breakpoint-2)    { font-size: 4em }
-    @include query-at($main-breakpoint) { text-align:left; @include pad(0,0); }
+    @include query-at($main-breakpoint) { text-align:left; }
   }
 
   .title + h2, h1 + h2{
@@ -49,7 +47,8 @@
     margin-bottom: $base-space/3;
   }
 
-  p{ overflow: visible; }
+  p                   { overflow: visible; }
+  p:first-of-type     { font-size: 135%; };
 
   article img { width: 100%; }
 

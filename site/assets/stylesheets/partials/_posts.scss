@@ -10,7 +10,6 @@ div[role="main"]{
 
     .meta{
       font-size: 0.8em;
-      text-align: center;
 
       @include query-at($main-breakpoint) { text-align:left; }
 

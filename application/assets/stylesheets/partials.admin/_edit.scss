@@ -26,14 +26,15 @@ $z-zen-toggle: 103;
       color: white - 10;
       background: $admin-darkgrey;
       border-right: 1px solid rgba(white, 0.2);
-      padding: 12px 15px;
-      display: block;
+      padding: 12px 0;
+      display: inline-block;
+      width: 3em;
 
       &:hover{ color: white; background: $admin-darkgrey + 20; }
       &.highlight{ color: $admin-darkgrey + 30; }
 
-      @include query-at($nav-breakpoint)  { font-size: 22px; padding: 12px 20px; }
-      @include query-at($main-breakpoint) { font-size: 24px; padding: 14px 20px; }
+      @include query-at($nav-breakpoint)  { font-size: 22px; padding: 12px 0; }
+      @include query-at($main-breakpoint) { font-size: 24px; padding: 14px 0; }
     }
 
     .save-progress{

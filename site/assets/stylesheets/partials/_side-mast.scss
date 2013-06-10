@@ -156,7 +156,7 @@ $header-z: 10;
     }
 
     .tagline{ 
-      font-weight: normal;
+      font-weight: 200;
       font-style: normal;
       display: block;
       float: left;
@@ -166,18 +166,16 @@ $header-z: 10;
       display: none;
       padding: $gutter-width;
       width: 100%;
-      // text-align: center;
 
       @include query-at($nav-breakpoint){ 
         display: block;
         border: none;
         background: none;
-        color: $text-color + 80;
+        color: $text-color + 50;
         padding: 0;
         margin-top: 0;
       }
 
-      // @include query-at($main-breakpoint){ text-align: left }
     }
 
     // Let's import our nav here, which will 

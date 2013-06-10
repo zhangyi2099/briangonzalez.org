@@ -4,7 +4,9 @@ author:   Brian G.
 date:     June 03, 2013
 ---
 :markdown
-  Recently, I released a new version of [jquery.pep.js](http://pep.briangonzalez.org), which adds in droppable functionality. For example, when an object overlaps a target, you can perform various actions on the object in question as well as the overlapping targets.
+  Recently, I released a new version of [jquery.pep.js](http://pep.briangonzalez.org), which adds in droppable functionality. 
+
+  For example, when an object overlaps a target, you can perform various actions on the object in question as well as the overlapping targets.
 
   Let's say you had a div with a class of `pep` and another div with a class of `drop-target`, here is some example JS to make `.pep` and `.drop-target` interact in a draggable/droppable manner.
 
@@ -13,7 +15,8 @@ date:     June 03, 2013
         stop: function(ev, obj){
           obj.activeDropRegions // an array of all active drop regions.
         }
-      }); 
+      });
+    {:class=javascript}
 
 :markdown
   ## Demo #1 - Draggable
@@ -37,7 +40,7 @@ date:     June 03, 2013
 <script async src="http://codepen.io/assets/embed/ei.js"></script>
 
 :markdown
-  [View jquery.pep.js on Github](https://github.com/briangonzalez/jquery.pep.js){:class=button}
+  Interested? Check out [jquery.pep.js](https://github.com/briangonzalez/jquery.pep.js)  on Github.
 
 :css
   iframe.cp_embed_iframe{ margin-bottom: 30px; }
