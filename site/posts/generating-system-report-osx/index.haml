@@ -1,0 +1,33 @@
+---
+title:    Generating a System Report on OSX
+author:   Brian Gonzalez
+date:     May 24, 2013
+---
+
+:markdown
+  
+  There are two ways to generate a system report for your Mac: the [automated](#automated) way and the [manual](#manual) way.
+
+  Automated
+  ----------
+  Simply paste the following command into Terminal.app
+
+      system_profiler | mail -s "$HOSTNAME System Profiler Report" foo@bar.com
+
+  Manual
+  ------
+  (1) Click the &#63743; in the upper-left hand corner:
+
+  ![](http://briangonzalez.org/uploads/system_profiler_1.png){:class=scale}
+
+  (2) Click `More Info...`:
+
+  ![](http://briangonzalez.org/uploads/system_profiler_2.png){:class=scale}
+  
+  (3) Click `System Report...`
+
+  ![](http://briangonzalez.org/uploads/system_profiler_3.png){:class=scale}
+
+  (4) Click `Save`
+
+  ![](http://briangonzalez.org/uploads/system_profiler_4.png){:class=scale}

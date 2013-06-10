@@ -1,0 +1,43 @@
+---
+title:    jquery.pep.js draggable functionality
+author:   Brian G.
+date:     June 03, 2013
+---
+:markdown
+  Recently, I released a new version of [jquery.pep.js](http://pep.briangonzalez.org), which adds in droppable functionality. For example, when an object overlaps a target, you can perform various actions on the object in question as well as the overlapping targets.
+
+  Let's say you had a div with a class of `pep` and another div with a class of `drop-target`, here is some example JS to make `.pep` and `.drop-target` interact in a draggable/droppable manner.
+
+      $('.pep').pep({
+        droppable: '.drop-target',
+        stop: function(ev, obj){
+          obj.activeDropRegions // an array of all active drop regions.
+        }
+      }); 
+
+:markdown
+  ## Demo #1 - Draggable
+  In this demo, we use Pep's built-in `draggable` functionality; that is, when an object overlaps a target, the target becomes highlighted.
+
+<pre class="codepen" data-height="500" data-type="result" data-href="vHiLk" data-user="briangonzalez" data-safe="true"><code></code><a href="http://codepen.io/briangonzalez/pen/vHiLk">Check out this Pen!</a></pre>
+<script async src="http://codepen.io/assets/embed/ei.js"></script>
+
+:markdown
+  ## Demo #2 - Custom Overlap Function
+  In this demo, we use a custom overlap function. Pep's default behavior is to consider an object overlapping if any part of the object is over the target, but in this demo we consider an object to be overlapping if the entire object is inside the target.
+
+<pre class="codepen" data-height="500" data-type="result" data-href="vHiLk" data-user="briangonzalez" data-safe="true"><code></code><a href="http://codepen.io/briangonzalez/pen/vHiLk">Check out this Pen!</a></pre>
+<script async src="http://codepen.io/assets/embed/ei.js"></script>
+
+:markdown
+  ## Demo #3 - Consuming Parent
+  In this demo, as your drag around the object, we can check if the object overlaps one of the targets when the `stop` event is triggered. If it is, we can center in the target, which gives the effect that the target "consumes" the object.
+    
+<pre class="codepen" data-height="500" data-type="result" data-href="jqdar" data-user="briangonzalez" data-safe="true"><code></code><a href="http://codepen.io/briangonzalez/pen/jqdar">Check out this Pen!</a></pre>
+<script async src="http://codepen.io/assets/embed/ei.js"></script>
+
+:markdown
+  [View jquery.pep.js on Github](https://github.com/briangonzalez/jquery.pep.js){:class=button}
+
+:css
+  iframe.cp_embed_iframe{ margin-bottom: 30px; }
