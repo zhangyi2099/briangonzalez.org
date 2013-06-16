@@ -25,11 +25,11 @@
   }
 
   h1{
-    font-size: 2em;
+    font-size: 1.2em;
     font-weight: 300;
 
     @include query-at($breakpoint-1)    { font-size: 2.3em }
-    @include query-at($breakpoint-2)    { font-size: 4em }
+    @include query-at($breakpoint-2)    { font-size: 3em }
     @include query-at($main-breakpoint) { text-align:left; }
   }
 
@@ -48,7 +48,7 @@
   }
 
   p          { overflow: visible; }
-  .title + p { font-size: 135%; };
+  .title + p { font-size: 135%; font-weight: 300; font-style: italic; };
 
   article img { width: 100%; }
 

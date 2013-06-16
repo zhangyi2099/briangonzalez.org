@@ -32,9 +32,12 @@ body {
   //  By setting the font-size on our body 
   //  and using em's everywhere else,
   //  we'll have a really nice scalable site.
-  @include query-at($breakpoint-1){ font-size: 92%; }
-  @include query-at($breakpoint-4){ font-size: 96%; }
-  @include query-at($breakpoint-6){ font-size: 100%; }
+  @include query-at($breakpoint-1){ font-size: 98%; }
+  @include query-at($breakpoint-2){ font-size: 102%; }
+  @include query-at($breakpoint-3){ font-size: 104%; }
+  @include query-at($breakpoint-4){ font-size: 106%; }
+  @include query-at($breakpoint-5){ font-size: 108%; }
+  @include query-at($breakpoint-6){ font-size: 110%; }
 
 }
 

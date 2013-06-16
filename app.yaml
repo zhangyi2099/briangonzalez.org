@@ -7,7 +7,7 @@ repo_url: git@github.com:briangonzalez/briangonzalez.org.git
 authorized_users: 
   brian: 266052442b061694afa44a1376dfb05e
 google_fonts_families:
-  - Lato:300,400,700,900
+  - Lato:300,300italic,400,400italic,700,900
 root_path: ' /home'
 nav: 
   Home: " /home"
