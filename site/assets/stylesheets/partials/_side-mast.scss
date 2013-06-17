@@ -156,8 +156,8 @@ $header-z: 10;
     }
 
     .tagline{ 
-      font-weight: 200;
-      font-style: normal;
+      font-weight: 400;
+      font-style: italic;
       display: block;
       float: left;
       background: $secondary-color;
@@ -166,12 +166,13 @@ $header-z: 10;
       display: none;
       padding: $gutter-width;
       width: 100%;
+      font-size: 0.9em;
 
       @include query-at($nav-breakpoint){ 
         display: block;
         border: none;
         background: none;
-        color: $text-color + 50;
+        color: $text-color + 75;
         padding: 0;
         margin-top: 0;
       }
