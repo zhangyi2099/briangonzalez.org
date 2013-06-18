@@ -1,0 +1,25 @@
+---
+title:    Unpacking Ruby Gems for Production
+author:   Brian G.
+date:     June 17, 2013
+---
+
+:markdown
+  If you're not unpacking your Ruby gems for your production environment, you're likely doing something wrong.
+
+  ## Setup Bundler
+  [Bundler](http://gembundler.com) makes the process dead simple. Make sure you have _bundler_ installed: 
+      
+      gem install bundler
+
+  then make sure you have a valid `Gemfile` with all of your app's dependencies in it.
+
+  ## Unpack your Ruby gems
+
+  Unpacking all of your gems is dead simple:
+
+      bundle install --deployment
+  
+  This will unpack all of your gems into `./vendor/bundle`. If you want to unpack your gems into a specific location, use the `--path` command-line switch:
+
+      bundle install --deployment --path gems/go/here
