@@ -48,7 +48,7 @@
   }
 
   p          { overflow: visible; }
-  .title + p { font-size: 135%; font-weight: 300; font-style: italic; };
+  .title + p { font-size: 120%; font-weight: 300; font-style: italic; };
 
   article img { width: 100%; }
 
@@ -63,7 +63,7 @@
     padding-bottom: $base-space/2;
   }
 
-  a       { background:   desaturate($tan-grey, 10%) ;   border-bottom: 1px solid rgba($primary-color, 0.2); font-weight: bold; }
+  a       { background:   rgba($primary-color, 0.05); font-weight: bold; border-bottom: 1px solid $primary-color + 80;}
   a:hover { background:   rgba($primary-color, 0.1) }
 
 }
