@@ -9,11 +9,13 @@ div[role="main"]{
     h2 { font-size: 1.5em; }
 
     .meta{
-      font-size: 0.8em;
+      font-size: 0.75em;
+      font-weight: 400;
+      color: $lightgrey - 10;
 
       @include query-at($main-breakpoint) { text-align:left; }
 
-      time, .author   { font-weight: 700; color: $lightgrey - 10; text-transform: uppercase;  }
+      time, .author   { text-transform: uppercase;  }
       .between        { color: $lightgrey + 10;  
                         display: inline-block; margin: 0 0.4em; font-weight: 200; 
                         font-size: 0.9em; letter-spacing: 1px;
