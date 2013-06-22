@@ -12,7 +12,9 @@ a.admin-button, a.admin-button:visited {
   cursor: pointer;
 
   color: white;
-  background: $darkgrey;;
+  background: $darkgrey;
+
+  width: 100%;
 
   @include border-radius(1px); 
   @include single-transition(background, 300ms);
@@ -22,9 +24,6 @@ a.admin-button, a.admin-button:visited {
     margin:  0.4em 0.4em 0 0;
     padding:    0.75em 4em;
   }
-
-  &.full{ width: 100% }
-  &.full-margin{ width: 100% }
 }
 
 a.admin-button:hover { background: $admin-darkgrey }

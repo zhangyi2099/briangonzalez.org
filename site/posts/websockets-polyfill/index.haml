@@ -29,11 +29,12 @@ date:     February 25, 2013
         session.print('<cross-domain-policy><allow-access-from domain="*" to-ports="*" /></cross-domain-policy>')
         session.close
       end
-    {:lang=ruby}
+  {:class=ruby}
+
 
   Then fire it up like so:
       
       sudo ruby flash_socket_policy_server.rb
-    {:lang=shell}
+    {:class=bash}
 
   __Note__ the `sudo` command, which is needed because port `843` is so low.
