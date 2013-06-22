@@ -1,0 +1,32 @@
+---
+title:    Starting FontPrep from the Command Line
+flags:    ['titleize']                       # Only if titleizing. Remove this flag for no/custom title. 
+---
+
+:markdown
+  Starting [FontPrep](http://fontprep.com) from the command line helps us debug any issues you might have during initialization.
+
+  ## Install FontPrep
+  Make sure FontPrep is installed -- it does not need to be running.
+
+  ## Backup old version, if necessary
+  If this is __NOT__ your first time running FontPrep, open up your Terminal.app and paste the following command:
+
+      mv ~/Library/Application\ Support/FontPrep ~/Library/Application\ Support/FontPrep.old
+
+  ## Starting FontPrep
+  Paste the following command into Terminal.app:
+
+      cd /Applications/FontPrep.app/Contents/Resources/fontprep_server && ruby app.rb
+
+  * If you see `[FONTPREP] Fontprep is now running on port 7500` then:
+
+    * Wait a few moments, then point your browser at [http://localhost:7500](http://localhost:7500). You can now interact with a local FontPrep server via your web browser.
+
+  * If you __DO NOT__ see `[FONTPREP] Fontprep is now running on port 7500`, then FontPrep is having trouble starting.
+
+    * Please copy the output from the terminal and send an email to [support](support@fontprep.com).
+
+
+
+  
