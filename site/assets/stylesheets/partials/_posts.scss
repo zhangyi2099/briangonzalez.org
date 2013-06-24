@@ -10,8 +10,9 @@ div[role="main"]{
 
     .meta{
       font-size: 0.75em;
-      font-weight: 400;
+      font-weight: 300;
       color: $lightgrey - 10;
+      letter-spacing: 6px;
 
       @include query-at($main-breakpoint) { text-align:left; }
 
