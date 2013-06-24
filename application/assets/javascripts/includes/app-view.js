@@ -22,7 +22,7 @@ var InkApp = Backbone.View.extend({
     // The ever elusive fullscreen hack.
     setTimeout(function(){ window.scrollTo(0, 0) }, 0);
 
-    this.$smallNav      = this.$el.find('nav.main');
+    this.$smallNav      = this.$el.find('nav.main.small-logic');
     this.$imgs          = this.$el.find('div[role=main] article img.scale');
 
     this.setUnderscoreInterpolation();
@@ -56,7 +56,7 @@ var InkApp = Backbone.View.extend({
 
   toggleSmallNav: function(ev){
     ev.preventDefault();
-    this.$smallNav.toggle();
+    this.$smallNav.toggleClass('small-logic');
   },
 
   ajaxSetup: function(){

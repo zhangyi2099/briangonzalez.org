@@ -24,12 +24,3 @@ $nav-breakpoint:  $breakpoint-2;
 @mixin mixed-query-at($width-breakpoint, $height-breakpoint) {
   @media (min-width: $width-breakpoint) and (max-height:$height-breakpoint) { @content; }
 }
-
-.media-query-breakpoints{
-  content: $breakpoint-1 + "," + $breakpoint-2 + "," + $breakpoint-3 + "," + $breakpoint-4 + "," + $breakpoint-5 + "," + $breakpoint-6;
-  width: $nav-breakpoint;
-  position: absolute;
-  top: -1000px;
-  bottom: -1000px;
-  opacity: 0;
-}

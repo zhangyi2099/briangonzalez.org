@@ -2,14 +2,19 @@
 nav{
   float: left;
   width: 100%;
-  display: none;
   @extend .animated;
   @extend .fadeInDown;
 
   @include query-at($nav-breakpoint){ 
-    display: block;
+    //display: block;
     margin: $base-space 0;
     font-size: 1.2em;
+  }
+
+  &.small-logic{
+    display: none;
+
+    @include query-at($nav-breakpoint) { display: block; }
   }
 
   ul{  

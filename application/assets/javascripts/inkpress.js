@@ -7,7 +7,6 @@
 //= require "includes/app-bootstrap"
 //= require "includes/app-view"
 //= require "includes/code-view"
-//= require "includes/resizer"
 //= require "includes/template-fetcher"
 
 //= require "includes.admin/views/dialog-login"
