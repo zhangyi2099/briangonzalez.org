@@ -1,27 +1,28 @@
  
-//  A couple of little helpers to help us maintain the 
-//  width of our main content.
-@mixin main-full-width(){ @include span-columns(12, 12)  }
-@mixin main-right-width(){ @include span-columns(8 omega, 12) }  
 
  div[role="main"]{
 
   // This little doo-dad handles our nav spacing.
   margin-top: $base-space*4;
-  @include query-at($nav-breakpoint){ margin-top: 0; }
+  @include query-at($nav-breakpoint) { margin-top: 0; }
 
   float:left;
   max-width: $max-grid-width;
-  @include main-full-width();
+  @include span-columns(12, 12);
 
   //  Get our div[role="main"] to respond.
   //  This as well as  .side-mast will adjust at $main-breakpoint 
   //  (see _media.scss)
-  @include query-at($main-breakpoint){
-    @include main-right-width();
+  @include query-at($main-breakpoint) {
+    @include span-columns(9 omega, 12);
     @include pad(1,1);
     @include push(4);
     overflow: visible;
+  }
+
+  @include query-at($breakpoint-5) {
+    @include span-columns(10 omega, 12);
+    @include push(3);
   }
 
   h1{
