@@ -12,7 +12,7 @@ $header-z: 10;
 //    At small widths, it's a mast head.
 //    Hence, side-mast.
 .side-mast { 
-  position: absolute; left: 0; right: 0; 
+  position: fixed; left: 0; right: 0; 
   z-index: $header-z;
   width: 100%;
 
@@ -41,9 +41,8 @@ $header-z: 10;
   header{
     text-align: center;
     background: white;
-    border-bottom: 1px solid $super-lightgrey;
     color: white;
-    position: fixed; top: 0; left: 0; right: 0;
+    position: absolute; top: 0; left: 0; right: 0;
     z-index: $header-z;
     width: 100%;
 

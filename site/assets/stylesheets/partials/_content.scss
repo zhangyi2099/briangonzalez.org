@@ -47,7 +47,12 @@
     margin-bottom: $base-space/3;
   }
 
-  p          { overflow: visible; }
+  p          { 
+    overflow: visible; 
+    -webkit-hyphens: auto;
+       -moz-hyphens: auto;
+            hyphens: auto;
+  }
   .title + p { font-size: 120%; font-weight: 300; font-style: italic; };
 
   article img { width: 100%; }
