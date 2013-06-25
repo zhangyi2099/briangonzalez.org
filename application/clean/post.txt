@@ -1,8 +1,9 @@
 ---
-title:    Put the title of your post here
-author:   <author>
-date:     <date>
-flags:    ['no-publish']
+title:        Put the title of your post here
+author:       <author>
+date:         <date>
+flags:        ['no-publish']
+description:  This is your post's meta description.
 ---
 
 :markdown

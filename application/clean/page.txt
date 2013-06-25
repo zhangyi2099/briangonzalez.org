@@ -1,8 +1,10 @@
 ---
-title:    Put the page title here
-author:   --                                 # do you ..
-date:     --                                 # .. need these?
-flags:    ['titleize']                       # Only if titleizing. Remove this flag for no/custom title. 
+title:        Put the page title here
+author:       --                                    # do you ..
+date:         --                                    # .. need these?
+flags:        ['titleize']                          # Only if titleizing. Remove this flag for no/custom title. 
+description:  This is your page's meta description.
+
 ---
 
 :markdown

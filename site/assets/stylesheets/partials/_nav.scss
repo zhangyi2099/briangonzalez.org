@@ -6,7 +6,6 @@ nav{
   @extend .fadeInDown;
 
   @include query-at($nav-breakpoint){ 
-    //display: block;
     margin: $base-space 0;
     font-size: 1.2em;
   }
