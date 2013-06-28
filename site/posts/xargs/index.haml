@@ -36,7 +36,7 @@ description:  Ever wondered what 'xargs' was in a shell command? Here's a small 
       find . -name '*.css' -not -name "all.css"  | xargs cat > all.css
 
   ## Count lines in files
-  Perhaps you want to count the amount of lines in all txt files in your current directory. Suppose you had 3 text files in you current working directory: `lipsum.txt`, `lipsum_2.txt`, and `urls.txt`
+  Suppose you had 3 text files in you current working directory, `lipsum.txt`, `lipsum_2.txt`, and `urls.txt` and you wanted to count all of the lines in each file and total them up. The following command will get you on your way: 
 
       ls -1 *.txt | xargs wc -l
 
