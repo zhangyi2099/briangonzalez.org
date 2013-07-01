@@ -1,0 +1,36 @@
+---
+title:        Grunt Task for Serving Static HTML Files
+author:       Brian G.
+date:         June 30, 2013
+description:  A simple explanation on how to write a grunt task for serving static HTML files.
+---
+
+:markdown
+  Sometimes you need to serve up some static HTML, Javascript, CSS, and other static assets in your [grunt](https://github.com/gruntjs/grunt/wiki/Getting-started) project.
+
+  Part of my [Qunit](http://qunitjs.com/) test suite in a [recent project](https://github.com/briangonzalez/underscore-template-fetcher) required making AJAX requests for Javascript templates. I needed a way to serve the HTML files in my `test` directory -- I couldn't simple view the file in the browser because the browser doesn't allow . Here's how you can too.
+
+  ## Writing & running the task
+  First off, install the [shelljs](https://github.com/arturadib/shelljs) module.
+
+      npm install shelljs --save-dev
+
+  Note, the `--save-dev` flag adds the dependency to your `package.json` file, making your life easier in the future. 
+
+  Then add this task to `Gruntfile.js`:
+
+      grunt.registerTask('serve', 'Serves any directory on given port', function (env) {
+        var shell = require('shelljs');
+        var port  = grunt.option('port') || 8000;
+        var dir   = grunt.option('dir')  || '.';
+        console.log(['Serving', dir,'on port:', port].join(' '))
+        shell.exec('cd '+ dir +' && python -m SimpleHTTPServer ' + port);
+      });
+
+  Then start up the server with the following command:
+      
+      grunt serve
+
+   In my case, I run the command like so, serving the `test` directory on port 5000:
+      
+      grunt serve --port=5000 --dir=test

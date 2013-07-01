@@ -1,0 +1,17 @@
+---
+title:        Synchronous AJAX Request in Vanilla Javascript
+author:       Brian Gonzalez
+date:         July 01, 2013
+description:  How to make a synchronous AJAX request in Vanilla JS.
+---
+
+:markdown
+  Sometimes you need to make a really quick synchronous AJAX request. Sometimes you don't have jQuery at your disposal.
+
+  When you're in this situation, here's a little code snippet to help you out.
+
+      var xmlHttp = null;
+      xmlHttp = new XMLHttpRequest();
+      xmlHttp.open( "GET", "/path/to/resource", false );
+      xmlHttp.send( null );
+      var data = xmlHttp.responseText;
