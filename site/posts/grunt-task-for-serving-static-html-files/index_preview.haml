@@ -8,7 +8,9 @@ description:  A simple explanation on how to write a grunt task for serving stat
 :markdown
   Sometimes you need to serve up some static HTML, Javascript, CSS, and other static assets in your [grunt](https://github.com/gruntjs/grunt/wiki/Getting-started) project.
 
-  Part of my [Qunit](http://qunitjs.com/) test suite in a [recent project](https://github.com/briangonzalez/underscore-template-fetcher) required making AJAX requests for Javascript templates. I needed a way to serve the HTML files in my `test` directory -- I couldn't simple view the file in the browser because the browser doesn't allow . Here's how you can too.
+  Part of my [Qunit](http://qunitjs.com/) test suite in a [recent project](https://github.com/briangonzalez/underscore-template-fetcher) required making AJAX requests for Javascript templates. I needed a way to serve the HTML files in my `test` directory -- I couldn't simply view the file in the browser because the browser doesn't allow AJAX requests over the `file://` scheme. 
+
+  Here's how you can fire up an HTTP server for you grunt projects.
 
   ## Writing & running the task
   First off, install the [shelljs](https://github.com/arturadib/shelljs) module.
