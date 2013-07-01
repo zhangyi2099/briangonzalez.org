@@ -54,11 +54,11 @@ pre{
 
 p, li{
   code{
-    padding: 1px 3px 2px 3px;
-    border: 1px solid $super-lightgrey;
-    @include border-radius(3px);
+    padding: 1px 4px 2px 4px;
+    margin: 0 2px;
+    @include border-radius(2px);
     font-size: 0.9em;
-    color: $darkgrey;
-    background: $super-lightgrey;
+    color: black;
+    background: $super-lightgrey - 15;
   }
 }

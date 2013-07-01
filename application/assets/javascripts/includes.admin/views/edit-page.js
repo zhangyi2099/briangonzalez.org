@@ -42,15 +42,15 @@ var InkAdminEdit = Backbone.View.extend({
   instantiateTextArea: function(){
     var el = this.$code[0];
     var editor = new Behave({
-      textarea: el,
-      replaceTab: true,
-      softTabs: true,
-      softTabSize: 2,
-      autoOpen: true,
-      overwrite: true,
-      autoStrip: true,
-      autoIndent: true,
-      fence: false
+      textarea:     el,
+      replaceTab:   true,
+      softTabs:     true,
+      softTabSize:  2,
+      autoOpen:     false,
+      overwrite:    true,
+      autoStrip:    true,
+      autoIndent:   true,
+      fence:        false
     });
   },
 
