@@ -66,6 +66,11 @@ class InkApp < Sinatra::Base
     ink(:path => path.strip )
   end 
 
+  get '/rss' do
+    content_type 'application/rss+xml'
+    haml :rss, :layout => false
+  end
+
   get %r{^/home(/\z|\z)|^/posts(/\z|\z)} do
     ink(:path => '/home')
   end

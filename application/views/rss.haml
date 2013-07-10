@@ -1,0 +1,22 @@
+
+%xml{ version: "1.0", encoding: "UTF-8" }
+%rss{ version: "2.0" }
+  %channel
+    %title
+      = app(:site)
+    %description
+      = app(:tagline)
+    %link 
+      = app(:url) 
+
+    - post_titles_and_info.each do |p|
+      - p[1].each do |post|
+        %item
+          %title
+            = post[:title]
+          %link
+            = "#{app(:url)}/posts/#{post[:path]}"
+          %guid
+            = "#{app(:url)}/posts/#{post[:path]}"
+          %pubDate
+            = post[:date]

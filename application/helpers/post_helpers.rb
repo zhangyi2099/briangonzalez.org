@@ -24,7 +24,11 @@ module Sinatra
         title = front_matter['title'] || false
 
         titles_and_info_hash[year] ||= []
-        titles_and_info_hash[year].push({ :title => title, :date => date, :path => File.basename(post_path) }) 
+        titles_and_info_hash[year].push({ 
+          :title => title, 
+          :date => date, 
+          :path => File.basename(post_path) 
+        }) 
       
       end
 
