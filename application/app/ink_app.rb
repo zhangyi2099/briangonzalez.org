@@ -67,7 +67,7 @@ class InkApp < Sinatra::Base
   end 
 
   get '/rss' do
-    content_type 'application/rss+xml'
+    content_type 'text/xml', :charset => 'utf-8'
     haml :rss, :layout => false
   end
 

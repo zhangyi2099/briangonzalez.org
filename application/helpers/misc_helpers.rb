@@ -25,6 +25,10 @@ module Sinatra
       "//fonts.googleapis.com/css?family=#{f}"
     end
 
+    def h(text)
+      Rack::Utils.escape_html(text)
+    end
+
   end
 
   helpers MiscHelper

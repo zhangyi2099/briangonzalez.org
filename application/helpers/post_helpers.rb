@@ -19,15 +19,17 @@ module Sinatra
         
         next if front_matter['flags'] and front_matter['flags'].include? 'no-publish'
 
-        date  = front_matter['date'] || "January 1, 0000"
-        year  = Date.parse(date).year
-        title = front_matter['title'] || false
+        date          = front_matter['date'] || "January 1, 0000"
+        description   = front_matter['description'] || ""
+        year          = Date.parse(date).year
+        title         = front_matter['title'] || false
 
         titles_and_info_hash[year] ||= []
         titles_and_info_hash[year].push({ 
-          :title => title, 
-          :date => date, 
-          :path => File.basename(post_path) 
+          :title        => title, 
+          :date         => date, 
+          :path         => File.basename(post_path),
+          :description  => description 
         }) 
       
       end
