@@ -1,0 +1,28 @@
+---
+title:        Building an image inspector using jquery.pep.js
+author:       Brian G.
+date:         July 10, 2013
+description:  A simple demo on how to build an image inspector using jquery.pep.js.
+---
+
+:markdown
+  Building an image inspector is a breeze using [jquery.pep.js](http://pep.briangonzalez.org/).
+
+  The example below shows how it works. In short, the white magnifier rectangle is a pep object bound like so:
+
+      var opts = {
+        constrainTo: 'parent',
+        shouldEase: false,
+        drag: function(ev, obj){
+          /* custom logic, see Codepen example below */
+        }
+      };
+
+      $('.magnifier').pep(opts);
+
+  Now, with a little custom logic which can be seen in the Codepen Javascript code, we can alter the `background-position` of the larger image as we drag around the magnifier.
+
+  ## Result
+
+<pre class="codepen" data-height="1000" data-type="result" data-href="lkDpJ" data-user="briangonzalez" data-safe="true"><code></code><a href="http://codepen.io/briangonzalez/pen/lkDpJ">Check out this Pen!</a></pre>
+<script async src="http://codepen.io/assets/embed/ei.js"></script>
