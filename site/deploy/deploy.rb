@@ -31,17 +31,34 @@ ssh_options[:forward_agent] = true
 set :rvm_type, :system
 
 # clean up old releases on each deploy
-after "deploy:restart", "deploy:cleanup"
-
-# create our logs
-before 'deploy:restart', "deploy:create_logs"
-before 'deploy:restart', "deploy:checkout_master"
+after  'deploy:restart',    "deploy:cleanup"
+before 'deploy:update',     "deploy:check_for_changes"
+before 'deploy:restart',    "deploy:create_logs"
+before 'deploy:restart',    "deploy:checkout_master"
 
 # If you are using Passenger mod_rails uncomment this:
 namespace :deploy do
   task :start do ; end
   task :stop do ; end
   
+  task :check_for_changes do
+    begin
+      cmds = [
+        "cd '#{current_path}'",
+        "git add .",
+        "CHANGES=$(git diff --numstat | wc -l)",
+        "CHANGES_CACHED=$(git diff --cached --numstat | wc -l)",
+        "TOTAL_CHANGES=$(($CHANGES + $CHANGES_CACHED))",
+        'echo $TOTAL_CHANGES unsaved files',
+        'exit $TOTAL_CHANGES'
+      ]
+      run cmds.join(' && ')
+    rescue Exception => e
+      logger.important "Deploy cancelled -- please save your changes in Inkpress before trying to deploy!"
+      raise e
+    end
+  end
+
   task :create_logs do
     logs    = File.join(deploy_to, 'logs')
     access  = File.join(deploy_to, 'logs', 'access.log')
@@ -52,7 +69,8 @@ namespace :deploy do
   end
 
   task :checkout_master do
-    run "cd '#{current_path}' && git checkout master && git pull"
+    raise "Unstaged changes, not deploying!"
+    run "cd '#{current_path}' && git stash && git checkout master && git pull"
   end
 
   task :restart, :roles => :app, :except => { :no_release => true } do
