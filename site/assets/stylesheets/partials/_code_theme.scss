@@ -1,114 +1,56 @@
-/*
-
-Style with support for rainbow parens
-
-*/
-
-pre ::-moz-selection{ background: #FF5E99; color:#fff; text-shadow: none; }
-pre ::selection { background:#FF5E99; color:#fff; text-shadow: none; }
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
 
 pre code {
-  display: block; padding: 0.5em;
-  background: #474949; color: #D1D9E1;
+  border: 1px solid $super-lightgrey;
+  background: $super-lightgrey + 3; 
+  @include border-radius(2px);
 }
 
-
-pre .body,
-pre .collection {
-   color: #D1D9E1;
+.tomorrow-comment, pre .comment, pre .title {
+  color: #8e908c;
 }
 
-pre .comment,
-pre .template_comment,
-pre .diff .header,
-pre .doctype,
-pre .lisp .string,
-pre .javadoc {
-  color: #969896;
-  font-style: italic;
+.tomorrow-red, pre .variable, pre .attribute, pre .tag, pre .regexp, pre .ruby .constant, pre .xml .tag .title, pre .xml .pi, pre .xml .doctype, pre .html .doctype, pre .css .id, pre .css .class, pre .css .pseudo {
+  color: #c82829;
 }
 
-pre .keyword,
-pre .clojure .attribute,
-pre .winutils,
-pre .javascript .title,
-pre .addition,
-pre .css .tag {
-  color: #cc99cc;
+.tomorrow-orange, pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
+  color: #f5871f;
 }
 
-pre .number { color: #f99157; }
+.tomorrow-yellow, pre .ruby .class .title, pre .css .rules .attribute {
+  color: #eab700;
+}
 
-pre .command,
-pre .string,
-pre .tag .value,
-pre .phpdoc,
+.tomorrow-green, pre .string, pre .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata {
+  color: #718c00;
+}
+
+.tomorrow-aqua, pre .css .hexcolor {
+  color: #3e999f;
+}
+
+.tomorrow-blue, pre .function, pre .python .decorator, pre .python .title, pre .ruby .function .title, pre .ruby .title .keyword, pre .perl .sub, pre .javascript .title, pre .coffeescript .title {
+  color: #4271ae;
+}
+
+.tomorrow-purple, pre .keyword, pre .javascript .function {
+  color: #8959a8;
+}
+
+pre code {
+  display: block;
+  background: white;
+  color: #4d4d4c;
+  padding: 0.5em;
+}
+
+pre .coffeescript .javascript,
+pre .javascript .xml,
 pre .tex .formula,
-pre .regexp,
-pre .hexcolor {
-  color: #8abeb7;
-}
-
-pre .title,
-pre .localvars,
-pre .function .title,
-pre .chunk,
-pre .decorator,
-pre .built_in,
-pre .lisp .title,
-pre .identifier
-{
-  color: #b5bd68;
-}
-
-pre .class .keyword
-{
-  color: #f2777a;
-}
-
-pre .variable,
-pre .lisp .body,
-pre .smalltalk .number,
-pre .constant,
-pre .class .title,
-pre .parent,
-pre .haskell .label,
-pre .id,
-pre .lisp .title,
-pre .clojure .title .built_in {
-   color: #ffcc66;
-}
-
-pre .tag .title,
-pre .rules .property,
-pre .django .tag .keyword,
-pre .clojure .title .built_in {
-  font-weight: bold;
-}
-
-pre .attribute,
-pre .clojure .title {
-  color: #81a2be;
-}
-
-pre .preprocessor,
-pre .pi,
-pre .shebang,
-pre .symbol,
-pre .symbol .string,
-pre .diff .change,
-pre .special,
-pre .attr_selector,
-pre .important,
-pre .subst,
-pre .cdata {
-  color: #f99157;
-}
-
-pre .deletion {
-  color: #dc322f;
-}
-
-pre .tex .formula {
-  background: #eee8d5;
+pre .xml .javascript,
+pre .xml .vbscript,
+pre .xml .css,
+pre .xml .cdata {
+  opacity: 0.5;
 }
