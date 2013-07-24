@@ -28,6 +28,7 @@ body.posts{
 
     article {
       a { background:   $super-lightgrey; padding: 1px 5px 3px 5px; @include border-radius(2px); }
+      a:hover { background:   rgba($primary-color, 0.1)  }
     }
 
   }
