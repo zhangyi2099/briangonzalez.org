@@ -69,7 +69,6 @@ namespace :deploy do
   end
 
   task :checkout_master do
-    raise "Unstaged changes, not deploying!"
     run "cd '#{current_path}' && git stash && git checkout master && git pull"
   end
 
