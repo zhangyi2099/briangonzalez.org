@@ -80,14 +80,12 @@ $header-z: 10;
 
     a.logo-wrap{
      display: none;
+     text-align: left;
 
-     img{ @include filter( invert(100%) ) }
-
-      @include query-at($nav-breakpoint){
-        background: $secondary-color;
-        height: 7em; width: 7em;
-        margin: 0 auto $base-space auto;
-        padding: 1.4em;
+      @include query-at($nav-breakpoint) {
+        height: 7em;
+        margin: 0 auto $base-space/4 auto;
+        padding: $base-space/2;
         display: block;
         position: relative;
         float: none;
@@ -96,13 +94,14 @@ $header-z: 10;
 
         img{
           height: 100%;
-          @include filter( invert(100%) opacity(95%) );
+          @include filter( opacity(95%) );
         }
 
       }
 
-      @include query-at($main-breakpoint){
-        margin: 0 0 $base-space/2 0;
+      @include query-at($main-breakpoint) {
+        text-align: left;
+        margin: 0 0 $base-space/4 0;
       }
 
     }
