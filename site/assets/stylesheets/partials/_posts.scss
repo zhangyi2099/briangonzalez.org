@@ -1,29 +1,34 @@
 
-div[role="main"]{
+body.posts{
+  div[role="main"]{
 
-  .title{
-    margin-bottom: $base-space;
-    border-bottom: 0;
+    .title{
+      margin-bottom: $base-space;
+      border-bottom: 0;
 
-    h1 { margin-bottom: $base-space/2; }
-    h2 { font-size: 1.5em; }
+      h1 { margin-bottom: $base-space/2; }
+      h2 { font-size: 1.5em; }
 
-    .meta{
-      font-size: 0.75em;
-      font-weight: 300;
-      color: $lightgrey - 10;
-      letter-spacing: 6px;
+      .meta{
+        font-size: 0.75em;
+        font-weight: 300;
+        color: $lightgrey - 10;
+        letter-spacing: 6px;
 
-      @include query-at($main-breakpoint) { text-align:left; }
+        @include query-at($main-breakpoint) { text-align:left; }
 
-      time, .author   { text-transform: uppercase;  }
-      .between        { color: $lightgrey + 10;  
-                        display: inline-block; margin: 0 0.4em; font-weight: 200; 
-                        font-size: 0.9em; letter-spacing: 1px;
-                      }
-      hr              { border-color: $super-lightgrey + 3; }
+        time, .author   { text-transform: uppercase;  }
+        .between        { color: $lightgrey + 10;  
+                          display: inline-block; margin: 0 0.4em; font-weight: 200; 
+                          font-size: 0.9em; letter-spacing: 1px;
+                        }
+        hr              { border-color: $super-lightgrey + 3; }
+      }
+    }
+
+    article {
+      a { background:   $super-lightgrey; padding: 1px 5px 3px 5px; @include border-radius(2px); }
     }
 
   }
-
 }

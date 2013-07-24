@@ -69,8 +69,8 @@
     padding-bottom: $base-space/2;
   }
 
-  a       { background:   rgba($primary-color, 0.05); padding: 1px 5px 3px 5px; @include border-radius(2px); }
-  a:hover { background:   rgba($primary-color, 0.1) }
+  a       { background:   rgba($primary-color, 0.05) }
+  a:hover { background:   rgba($primary-color, 0.1)  }
 
 }
 
