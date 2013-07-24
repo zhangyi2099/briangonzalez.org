@@ -8,7 +8,7 @@ description:  How to automatically run a Grunt task before pushing to your remot
 :markdown
   Oftentimes I am working on a [gruntjs](http://gruntjs.com/)-based project and have found it useful to run my default grunt task prior to pushing my code to my remote git repository.  My default grunt task typically runs a jshint task, a qunit task, a concat task, and an uglify task -- all of which you want executing without errors before your code makes it out into the wild.
 
-  And, luckily, git has a way to automagically run arbitrary bash code in various places in your git workflow using what's called [git hooks](http://git-scm.com/book/en/Customizing-Git-Git-Hooks).
+  And, luckily, git has a way to automatically run arbitrary bash code at various places in your git workflow using what's called [git hooks](http://git-scm.com/book/en/Customizing-Git-Git-Hooks).
 
   ## Make the hook
   Fire up your terminal and run the following commands in the root of your repository 
