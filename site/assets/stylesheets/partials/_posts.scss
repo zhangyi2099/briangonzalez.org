@@ -10,19 +10,19 @@ body.posts{
       h2 { font-size: 1.5em; }
 
       .meta{
-        font-size: 0.75em;
-        font-weight: 300;
-        color: $lightgrey - 10;
-        letter-spacing: 6px;
+        font-size: 0.6em;
+        font-weight: 400;
+        color: $text-color + 60;
+        letter-spacing: 3px;
 
         @include query-at($main-breakpoint) { text-align:left; }
 
         time, .author   { text-transform: uppercase;  }
-        .between        { color: $lightgrey + 10;  
+        .between        { color: $text-color + 80;  
                           display: inline-block; margin: 0 0.4em; font-weight: 200; 
                           font-size: 0.9em; letter-spacing: 1px;
                         }
-        hr              { border-color: $super-lightgrey + 3; }
+        hr              { border-color: $lightgrey + 20; }
       }
     }
 
