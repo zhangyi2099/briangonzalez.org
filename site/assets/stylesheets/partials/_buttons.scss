@@ -1,4 +1,6 @@
 
+$button-shadow-depth: 5;
+
 a.button, a.button:visited {
 
   background: $primary-color + 2;
@@ -17,9 +19,12 @@ a.button, a.button:visited {
 
   border: 1px solid rgba($primary-color - 10, 0.2);
   @include border-radius($button-border-radius);
-  @include background-image( 
-    linear-gradient(top, $primary-color + 15, $primary-color - 3)
-  );
+
+  $shadow: ();
+  @for $i from 1 through $button-shadow-depth {
+    $shadow: append($shadow, append($i*1px $i*1px 0, darken($primary-color, $i)), comma);
+  }
+  @include box-shadow( $shadow );
 
   @include query-at($nav-breakpoint){
     display: inline-block;
@@ -32,16 +37,14 @@ a.button, a.button:visited {
 a.button:hover {
   color: $button-color;
   background: $primary-color + 10;
-  @include background-image( 
-    linear-gradient(top, $primary-color + 20, $primary-color)
-  );
   text-shadow: 0 1px 2px $primary-color - 75;
 }
 
 button:active, 
 .button:active {
   @include single-transition(all, 100ms);
-  @include transform( translateY(2px) );
+  @include transform( translateX($button-shadow-depth + px) translateY($button-shadow-depth + px) );
+  @include box-shadow(1px 1px 0 darken($primary-color, 5))
 }
 
 
