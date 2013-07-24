@@ -32,7 +32,7 @@ set :rvm_type, :system
 
 # clean up old releases on each deploy
 after  'deploy:restart',    "deploy:cleanup"
-before 'deploy:update',     "deploy:check_for_changes"
+before 'deploy:update',     "deploy:check_for_remote_changes"
 before 'deploy:restart',    "deploy:create_logs"
 before 'deploy:restart',    "deploy:checkout_master"
 
@@ -41,7 +41,7 @@ namespace :deploy do
   task :start do ; end
   task :stop do ; end
   
-  task :check_for_changes do
+  task :check_for_remote_changes do
     begin
       cmds = [
         "cd '#{current_path}'",
@@ -54,7 +54,7 @@ namespace :deploy do
       ]
       run cmds.join(' && ')
     rescue Exception => e
-      logger.important "Deploy cancelled -- please save your changes in Inkpress before trying to deploy!"
+      logger.important "Deploy cancelled -- please save your remote changes in Inkpress before trying to deploy!"
       raise e
     end
   end
