@@ -12,17 +12,16 @@ body.posts{
       .meta{
         font-size: 0.6em;
         font-weight: 400;
-        color: $text-color + 60;
+        color: $lightgrey - 50;
         letter-spacing: 3px;
 
         @include query-at($main-breakpoint) { text-align:left; }
 
         time, .author   { text-transform: uppercase;  }
-        .between        { color: $text-color + 80;  
+        .slash        { color: $text-color + 80;  
                           display: inline-block; margin: 0 0.4em; font-weight: 200; 
                           font-size: 0.9em; letter-spacing: 1px;
                         }
-        hr              { border-color: $lightgrey + 20; }
       }
     }
 

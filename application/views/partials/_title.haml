@@ -3,14 +3,12 @@
   .title
     
     .meta
+
       - if @date
         %time=  @date
 
       - if @author
-        %span.between= "/"
+        %span.slash= "/"
         %span.author= @author
-
-      - if @date and @author
-        %hr
 
     %h1=    @title
