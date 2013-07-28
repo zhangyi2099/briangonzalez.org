@@ -1,1 +1,1 @@
-[briangonzalez.org](http://briangonzalez.org)
+My personal site, [briangonzalez.org](http://briangonzalez.org).
