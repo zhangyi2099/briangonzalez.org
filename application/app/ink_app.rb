@@ -11,8 +11,6 @@ end
 #   --------------------------------------------
 class InkApp < Sinatra::Base
 
-  use Rack::Session::Pool
-
   #   Our main Ink Sinatra extensions and helpers.
   helpers   Sinatra::InkPageBuilderHelper
   helpers   Sinatra::InkShortURL::Helpers
@@ -51,10 +49,13 @@ class InkApp < Sinatra::Base
   set :assets_prefix,   '/assets'
   set :assets_path,     File.join(settings.sprockets_root, settings.assets_prefix)
 
-  # Tilt Bug.
+  #   Sessions
+  use Rack::Session::File, :expire_after => 1000 * 60 * 60 * 24 * 7 # 1 week
+
+  #   Tilt Bug.
   Encoding.default_internal = nil
 
-  # Routes.
+  #   Routes.
   before do
     # opt into the future
     response['X-UA-Compatible'] = "IE=edge,chrome=1"
