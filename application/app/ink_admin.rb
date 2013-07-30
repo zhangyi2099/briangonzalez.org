@@ -16,6 +16,7 @@ module Sinatra
 
       def login!(user)
         session['user'] = user 
+        env['rack.session.options'][:expire_after] = 2592000
       end
 
       def logout!
