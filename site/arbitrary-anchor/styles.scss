@@ -1,0 +1,163 @@
+
+@import 'compass';
+@import 'mixins';
+@import url(http://fonts.googleapis.com/css?family=BenchNine:700);
+
+body{
+
+  text-align: center;
+
+  @include query-at($breakpoint-1) { font-size: 90%; }
+  @include query-at($breakpoint-2) { font-size: 95%; }
+  @include query-at($breakpoint-3) { font-size: 110%; }
+
+  &:not(.admin)::after{
+    border: none;
+  }
+
+  .container.primary{ 
+    padding: 0; 
+
+    header{
+      padding: 20px 40px;
+      font-weight: 400;
+      text-transform: uppercase;
+      font-size: 0.8em;
+      letter-spacing: 2px;
+      text-align: center;
+      @include clearfix;
+
+      a.github, span  { display: block; text-align: center; margin: 1em; }
+      a.github  { float: none; background: #f6f6f6; padding: 0 10px; @include border-radius(2px) }
+      img.anchor{ width: 2em; margin-right: 10px }
+
+      @include query-at($breakpoint-1) {
+        text-align: initial;
+        a.github, span  { display: inline-block; text-align: initial; }
+        a.github  { float: right; }
+        span      { float: left; }
+      }
+    }
+
+    .full-width-box{
+      background-size: 100% 100%;
+      width: 100%;
+      padding: 10%;
+      position: relative;
+      overflow: visible;
+
+      @include query-at($breakpoint-1) {  padding: 10%; }
+      @include query-at($breakpoint-2) {  padding: 10%; }
+      @include query-at($breakpoint-3) {  padding: 10%; }
+      
+      h1.big { 
+        font-weight: 300; 
+        text-align: center; 
+        color: white; 
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-size: 2em;
+        line-height: 1.5;
+
+        @include query-at($breakpoint-1){
+          font-size: 3.4em;
+        }
+      }
+
+      h2{
+        font-weight: 900;
+        color: white; 
+        text-transform: uppercase;
+        font-style: italic;
+        letter-spacing: 6px;
+
+        &.black  { color: black; }
+        &.classy { font-size: 2em; font-weight: 300; font-style: normal; margin-bottom: 2em; margin-top: 0; }
+      }
+
+      .callout-group{
+        a.callout-link            { margin-right: 1em; }
+        a.callout-link:last-child { margin-right: 0; }
+      }
+
+      a.callout-link {
+        padding: 0.2em 1.5em;
+        border: 1px solid white;
+        color: white;
+        background: rgba(black, 0.1);
+        font-family: Menlo, Monaco, 'Courier New', sans;
+        font-size: 0.8em;
+        display: inline-block;
+        @include transition(all 250ms ease);
+
+        &:hover{ @include transform( translateY(-3px) ); };
+      }
+
+      &.chains{ 
+        background-image: url('/uploads/jqueryaa-chains_mod.jpg'); 
+        height: 600px;
+
+        .anchor-wrap{
+          position: absolute;
+          bottom: -20px;
+          left: 50%;
+          background: black;
+          padding: 0.3em 0.5em;
+          @include transform( translateX(-50%) );
+
+          img{ width: 1.5em; @include filter( invert(100%) ) }
+
+          @include query-at($breakpoint-1) {
+            padding: 0.75em;
+            bottom: -30px;
+            img{ width: 2.5em; }
+          }
+        }
+      }
+
+      &.hull{
+        height: 600px;
+        background-image: url('/uploads/jquery-aahull.jpg'); 
+      }
+
+      &.boats{
+        height:600px;
+        background-image: url('/uploads/jqueryaa-boats.jpg'); 
+      }
+
+      &.credits, &.explain{
+        a:not(.button) { border-bottom: 1px solid black; }
+        a.aa-button    { 
+          background: black; 
+          margin-top: 3em;
+          padding: 1em 3em; 
+          color: white; 
+          font-weight: 300; 
+          font-size: 0.9em;
+          letter-spacing: 2px;
+          text-transform:uppercase; 
+          display: inline-block;
+        }
+
+        .tweet-container { margin-top: 3em; }
+      }
+    }
+  }
+
+  .scroll-to-top {
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    color: white;
+    background: rgba(black, 0.9);
+    padding: 0.5em 0.75em;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0;
+    @include transform(scale(1.5));
+    @include transition(all 500ms);
+
+    &.shown{ opacity: 1; @include transform(scale(1)); }
+  }
+
+}

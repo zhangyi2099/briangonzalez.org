@@ -1,0 +1,12 @@
+//  These are our breakpoints.
+//
+$breakpoint-1:     550px;
+$breakpoint-2:     768px;
+$breakpoint-3:     1200px;
+
+//  This mixin is epic.
+//  Use it inline anywhere you want an
+//  element to respond to a certain breakpoint.
+@mixin query-at($breakpoint) {
+  @media (min-width: $breakpoint) { @content; }
+}

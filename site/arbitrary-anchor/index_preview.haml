@@ -1,0 +1,118 @@
+---
+title:        jquery.arbitrary-anchor.js
+author:       brian
+date:         July 27, 2013
+flags:        ['no-publish']
+layout:       minimal
+description:  This is your post's meta description.
+---
+
+%header
+  %span
+    %img.anchor{ src: "/uploads/jqueryaa-anchor.svg" }
+    jquery.arbitrary-anchor.js
+  
+  %a.github{ href: 'https://github.com/briangonzalez/jquery.arbitrary-anchor.js' }
+    Github
+
+// Chains ***************************************
+// **********************************************
+.full-width-box.chains
+  %h1.big
+    arbitrary anchors for any element on your page
+  %h2
+    Click link below to try.
+
+  .callout-group
+    %a.callout-link{ :href => '#.boats' }
+      \#.boats
+    %a.callout-link{ :href => '#.credits' }
+      \#.credits
+    %a.callout-link{ :href => '#.hello' }
+      \#.hello
+  
+  .anchor-wrap
+    %img.anchor{ src: "/uploads/jqueryaa-anchor.svg" }
+
+
+// Explanation ***************************************
+// ***************************************************
+.full-width-box.explain
+  %h2.black.classy
+    A little jquery magic goes </br> a long way.
+
+  %p
+    With 
+    %a{ href: "#.anchor" }
+      jquery.arbitrary-anchor.js
+    \, you can easily create useful and neat dynamic anchor scrolling by simply adding a jQuery/CSS selector after the hash (<code>#</code>) in your page's URL. This plugin extends the normal anchor functionality, that is, an anchor tag with a <code>name</code> value attribute will still get scrolled to as normal. The same goes for an element with an ID which matches the hash. 
+
+  %a.aa-button{ href: "https://github.com/briangonzalez/jquery.arbitrary-anchor.js" }
+    Fork on Github
+
+
+// Boats ***************************************
+// *********************************************
+.full-width-box.boats
+  %h1.big
+    use any css / jquery selector after the hash to scroll to that element
+  %h2
+    it's really quite simple.
+
+
+// Credits ***************************************
+// ***********************************************
+.full-width-box.credits
+  %h2.black.classy
+    Credits
+
+  Made with love in sunny southern California by <a href='http://briangonzalez.org'>Brian Gonzalez</a>. </br> 
+  
+  <a href="http://thenounproject.com/noun/anchor/#icon-No19886" target="_blank">Anchor</a> designed by <a href="http://thenounproject.com/kyletezak" target="_blank">Kyle Tezak</a> from The Noun Project </br>
+
+  Photos borrowed from <a href='http://www.flickr.com/photos/maydayrelay'>Flickr</a>.
+
+  .tweet-container
+    <a href="https://twitter.com/share" class="twitter-share-button" data-text="jquery.arbitrary-anchor.js - anchor to any element on the page" data-via="brianmgonzalez" data-size="large" data-count="none" data-hashtags="jquery">Tweet</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+
+// Hull ***************************************
+// ********************************************
+.full-width-box.hull
+  %h1.big
+    Let your imagination run free
+  %h2
+    Here's a few more.
+
+
+  .callout-group
+    %a.callout-link{ :href => '#.anchor' }
+      \#.anchor
+    %a.callout-link{ :href => '#header' }
+      \#header
+    %a.callout-link{ :href => '#.explain' }
+      \#.explain
+
+
+// Hello ***************************************
+// *********************************************
+.full-width-box.hello
+  %h2.black.classy
+    Say hello.
+
+  <a href="https://twitter.com/brianmgonzalez" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @brianmgonzalez</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+.scroll-to-top
+  ⇧
+
+%script{ src: "https://rawgithub.com/briangonzalez/jquery.arbitrary-anchor.js/master/jquery.arbitrary-anchor.js" }  
+
+- content_for :javascripts do
+  :javascript
+    {file: page.js}
+
+- content_for :styles do 
+  :css
+    {file: styles.scss}
