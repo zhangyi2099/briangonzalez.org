@@ -43,7 +43,6 @@ class InkApp < Sinatra::Base
   set :logging,             true
   set :static,              true                                # best case scenario: nginx/apache's job
   set :haml,                :format => :html5
-  set :protection,          { except:  :session_hijacking }     # don't let session expire thaaat easily
 
   #   Sprockets setup.
   set :sprockets_root,  File.join( settings.root, 'application' )
@@ -51,10 +50,7 @@ class InkApp < Sinatra::Base
   set :assets_path,     File.join(settings.sprockets_root, settings.assets_prefix)
 
   enable :sessions
-
-
-  # Tilt Bug.
-  Encoding.default_internal = nil
+  set :protection,          { except:  :session_hijacking }     # don't let session expire thaaat easily
 
   # Routes.
   before do
