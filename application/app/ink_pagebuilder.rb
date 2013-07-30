@@ -38,7 +38,7 @@ module Sinatra
         if should_compile? 
           puts '  ** Compiling page & creating directories as needed.'
           FileUtils.mkdir_p( compiled_path ) unless File.exists?( compiled_path )
-          File.open( compiled_page , 'w') {|f| f.write(html) }
+          File.open( compiled_page , "w:UTF-8") {|f| f.write(html) }
         end
         
         headers['Cache-Control'] = 'nocache, no-store'
@@ -57,7 +57,11 @@ module Sinatra
       if preview and !File.exists?(index_path(true)) 
         FileUtils.copy_file index_path, index_path(true)
       end 
-      @raw_page_content ||= File.read( index_path(preview) )
+      File.open( index_path(preview), "r:UTF-8" ) do |f|
+        @raw_page_content = f.read
+      end
+
+      @raw_page_content
     end
 
     def page_path
