@@ -1,5 +1,5 @@
 # Handle various stages
-case ENV['DEPLOY']
+case ENV['deploy']
 when 'production'
   puts ' ** Deploy to production  **************************************'
   set :domain, "briangonzalez.org"
@@ -32,7 +32,7 @@ set :rvm_type, :system
 
 # clean up old releases on each deploy
 after  'deploy:restart',    "deploy:cleanup"
-before 'deploy:update',     "deploy:check_for_remote_changes" unless ENV['force'] == 1
+before 'deploy:update',     "deploy:check_for_remote_changes" unless ENV['force'] == '1'
 before 'deploy:restart',    "deploy:create_logs"
 before 'deploy:restart',    "deploy:checkout_master"
 
