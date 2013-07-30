@@ -21,7 +21,7 @@ class InkSprocketsLoader
     Compass.configuration do |compass|
       compass.project_path = settings.assets_path
       compass.images_dir   = 'images'
-      compass.output_style = production? ? :compressed : :expanded
+      compass.output_style = Sinatra::Application.production? ? :compressed : :expanded
     end
 
     # CONFIGURE SPROCKETS
@@ -40,7 +40,7 @@ class InkSprocketsLoader
       config.manifest.clean
 
       # Minify our assets in prod, but not in dev.
-      if production?
+      if Sinatra::Application.production?
         @environment.js_compressor  = Uglifier.new(mangle: true)
       end
 

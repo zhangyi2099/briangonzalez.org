@@ -1,6 +1,9 @@
 
 source 'https://rubygems.org'
 
+# bundler
+gem 'bundler', '1.3.5'
+
 # server
 gem 'thin', '1.5.1'
 
@@ -29,3 +32,5 @@ gem 'uglifier', '2.1.2'
 gem 'execjs', '1.4.0'
 gem 'therubyracer', '0.11.4'
 gem 'highline', '1.6.19'
+
+gem 'rvm-capistrano', '1.2.7'

@@ -5,6 +5,7 @@ Dir.glob('./application/**/*.rb') do |file|
   require file
 end
 
+
 #   InkApp Class
 #   This is the bread & butter of our "modular"
 #   style Sinatra app.

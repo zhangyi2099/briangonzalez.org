@@ -3,7 +3,6 @@ require 'fileutils'
 module Sinatra
   module InkPageBuilderHelper
 
-
     def ink(opts={})
       # Setup our variables.
       layout                  = opts[:layout] || :layout
@@ -151,7 +150,7 @@ module Sinatra
       return false  if !File.exists?(compiled_page)
       return true   if params.has_key?('send-static')
 
-      production? and !logged_in?
+      Sinatra::Application.production? and !logged_in?
     end
 
     def compiled_page_exists?

@@ -1,3 +1,10 @@
+# Load RVM's capistrano plugin.    
+require "rvm/capistrano"
+set :rvm_ruby_string, '1.9.2'
+
+
+
+
 # Handle various stages
 case ENV['deploy']
 when 'production'
