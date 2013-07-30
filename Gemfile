@@ -33,4 +33,5 @@ gem 'execjs', '1.4.0'
 gem 'therubyracer', '0.11.4'
 gem 'highline', '1.6.19'
 
+gem 'capistrano', '2.13.3'
 gem 'rvm-capistrano', '1.2.7'
