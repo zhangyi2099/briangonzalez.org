@@ -11,7 +11,7 @@ end
 #   --------------------------------------------
 class InkApp < Sinatra::Base
 
-  enable :sessions
+  use Rack::Session::Pool
 
   #   Our main Ink Sinatra extensions and helpers.
   helpers   Sinatra::InkPageBuilderHelper
@@ -45,13 +45,11 @@ class InkApp < Sinatra::Base
   set :logging,             true
   set :static,              true                                # best case scenario: nginx/apache's job
   set :haml,                :format => :html5
-  set :protection,          { session: false }     # don't let session expire thaaat easily
 
   #   Sprockets setup.
   set :sprockets_root,  File.join( settings.root, 'application' )
   set :assets_prefix,   '/assets'
   set :assets_path,     File.join(settings.sprockets_root, settings.assets_prefix)
-
 
   # Tilt Bug.
   Encoding.default_internal = nil
