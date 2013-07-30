@@ -14,16 +14,16 @@
 %link{:href => stylesheet_path('inkpress'),       :media => "all", :rel => "stylesheet"}
 
 %style
-  = Sass::compile( strip_tags(yield_content :styles) )
+  = compile_sass( yield_content :styles )
 
 /   Google Web Fonts. 
 /   Their free, use 'em..
-%link{  :href => google_fonts_url, 
+%link{  :href  => google_fonts_url, 
         :media => "all", 
-        :rel => "stylesheet"}
+        :rel   => "stylesheet"}
 
 / jQuery! 
-%script{ :src => javascript_path("//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js") }
+%script{ :src => javascript_path("//code.jquery.com/jquery-2.0.3.min.js") }
 
 /[if lt IE 9]
   %script{ :src => javascript_path('//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js') }
