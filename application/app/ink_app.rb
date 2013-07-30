@@ -52,6 +52,9 @@ class InkApp < Sinatra::Base
   enable :sessions
   set :protection,          { except:  :session_hijacking }     # don't let session expire thaaat easily
 
+  # Tilt Bug.
+  Encoding.default_internal = nil
+
   # Routes.
   before do
     # opt into the future
