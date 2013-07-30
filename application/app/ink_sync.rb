@@ -14,7 +14,7 @@ module Sinatra
       end
 
       def git_sync
-        branch = production? ? 'deploy' : 'master'
+        branch = Sinatra::Application.production? ? 'deploy' : 'master'
         cmds = [
                 "git add .",
                 "git commit -am 'Saved Inkpress site @ #{Time.now.to_datetime.strftime "%a, %d %b %Y, %l:%M%P"}'",

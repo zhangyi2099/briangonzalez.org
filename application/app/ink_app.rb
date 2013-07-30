@@ -44,6 +44,7 @@ class InkApp < Sinatra::Base
   set :logging,             true
   set :static,              true                                # best case scenario: nginx/apache's job
   set :haml,                :format => :html5
+  set :protection,          :except => :frame_options
 
   #   Sprockets setup.
   set :sprockets_root,  File.join( settings.root, 'application' )
