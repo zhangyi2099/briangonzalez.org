@@ -6,10 +6,9 @@ namespace :ink do
   desc "Starting Inkpress Server (Thin) in development mode (-e for production)"
   task :start do |task|
     puts "*** " + task.full_comment
-    port = ask("Which port? ") { |p| p.default = "6789" }
 
     production = ENV.has_key?('emulate_production') ? '-e production' : ''
-    system("bundle exec thin start -R config.ru -p #{port} #{production}")
+    system("bundle exec thin start -R config.ru -p 3000 #{production}")
   end
 
   desc "Re-Initialize Inkpress site (WARNING: this may delete files/content)"
