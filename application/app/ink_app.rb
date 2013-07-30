@@ -11,8 +11,6 @@ end
 #   --------------------------------------------
 class InkApp < Sinatra::Base
 
-  enable :sessions
-
   #   Our main Ink Sinatra extensions and helpers.
   helpers   Sinatra::InkPageBuilderHelper
   helpers   Sinatra::InkShortURL::Helpers
@@ -51,6 +49,9 @@ class InkApp < Sinatra::Base
   set :sprockets_root,  File.join( settings.root, 'application' )
   set :assets_prefix,   '/assets'
   set :assets_path,     File.join(settings.sprockets_root, settings.assets_prefix)
+
+  enable :sessions
+
 
   # Tilt Bug.
   Encoding.default_internal = nil

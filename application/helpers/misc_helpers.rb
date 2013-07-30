@@ -29,6 +29,16 @@ module Sinatra
       Rack::Utils.escape_html(text)
     end
 
+    def strip_tags(s)
+      s.gsub( %r{</?[^>]+?>}, '' )
+    end
+
+    def compile_sass(string, opts={})
+      compass_dir = File.join(Compass.base_directory, "frameworks/compass/stylesheets")
+      string      = strip_tags(string)
+      Sass::compile(string, syntax: :scss, load_paths: [compass_dir, @page_path])
+    end
+
   end
 
   helpers MiscHelper

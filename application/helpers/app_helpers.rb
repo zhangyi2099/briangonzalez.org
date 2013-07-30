@@ -34,10 +34,6 @@ module Sinatra
       app
     end
 
-    def strip_tags(s)
-      s.gsub( %r{</?[^>]+?>}, '' )
-    end
-
   end
 
   helpers AppHelper
