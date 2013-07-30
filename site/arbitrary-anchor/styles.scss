@@ -77,7 +77,10 @@ body{
       }
 
       .callout-group{
-        a.callout-link            { margin-right: 1em; }
+        a.callout-link            { 
+          width: 100%; margin-top: 10px;
+          @include query-at($breakpoint-1){ width: auto; margin-right: 1em; }  
+        }
         a.callout-link:last-child { margin-right: 0; }
       }
 
