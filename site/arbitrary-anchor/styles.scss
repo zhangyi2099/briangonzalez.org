@@ -28,14 +28,16 @@ body{
       text-align: center;
       @include clearfix;
 
-      a.github, span  { display: block; text-align: center; margin: 1em; }
-      a.github  { float: none; background: #f6f6f6; padding: 0 10px; @include border-radius(2px) }
+      .github, span  { display: block; text-align: center; margin: 0.3em; }
+      .github        { float: none; background: #f6f6f6; padding: 0 10px; @include border-radius(2px) }
+      .github.iframe { background: none; } 
+              
       img.anchor{ width: 2em; margin-right: 10px }
-
+      
       @include query-at($breakpoint-1) {
         text-align: initial;
-        a.github, span  { display: inline-block; text-align: initial; }
-        a.github  { float: right; }
+        .github, span  { display: inline-block; text-align: initial; }
+        .github  { float: right; }
         span      { float: left; }
       }
     }
@@ -49,7 +51,7 @@ body{
 
       @include query-at($breakpoint-1) {  padding: 10%; }
       @include query-at($breakpoint-2) {  padding: 10%; }
-      @include query-at($breakpoint-3) {  padding: 10%; }
+      @include query-at($breakpoint-3) {  padding: 5% 20%; }
       
       h1.big { 
         font-weight: 300; 
