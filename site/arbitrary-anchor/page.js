@@ -20,8 +20,14 @@
       }
 
     }, 500)
-  })
-
+  });
+  
+  
+  $('a.callout-link').on('click', function(e){
+    e.preventDefault();  
+    window.location.hash = new Date().getTime();  
+    window.location.hash = $(this).attr('href');
+  });
 
   $scrollToTop.on('click', function(){
     $body.add( $html ).animate({ scrollTop: 0 }, 100);
