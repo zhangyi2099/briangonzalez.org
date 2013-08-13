@@ -1,6 +1,7 @@
 ;(function(){
 
   var $body         = $('body');
+  var $html         = $('html');
   var $scrollToTop  = $('.scroll-to-top');
 
   var scrollTimeout;
@@ -23,7 +24,7 @@
 
 
   $scrollToTop.on('click', function(){
-    $body.animate({ scrollTop: 0 }, 100);
+    $body.add( $html ).animate({ scrollTop: 0 }, 100);
     $(this).removeClass('shown')
   })
 

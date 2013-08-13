@@ -11,7 +11,9 @@ description:  How to make a synchronous AJAX request in Vanilla JS.
   When you're in this situation, here's a little code snippet to help you out.
 
       var xmlHttp = null;
-      xmlHttp = new XMLHttpRequest();
+      xmlHttp     = new XMLHttpRequest();
+
       xmlHttp.open( "GET", "/path/to/resource", false );
       xmlHttp.send( null );
-      var data = xmlHttp.responseText;
+
+      var data    = xmlHttp.responseText;
