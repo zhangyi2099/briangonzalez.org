@@ -35,7 +35,7 @@ var InkAdminEdit = Backbone.View.extend({
     this.$progress        = this.$el.find('.save-progress');
     this.$zenControls     = this.$el.find('.zen-controls');
   
-    this.saveInterval     = 1500;
+    this.saveInterval     = 3000;
     this.instantiateTextArea();
   },
 
@@ -56,7 +56,9 @@ var InkAdminEdit = Backbone.View.extend({
 
   savePage: function(ev){
 
-    if (ev.which == 91) return; 
+    var restrictedKeys = [16, 91, 17]
+    if ( restrictedKeys.indexOf(ev.which) > -1 || ev.ctrlKey || ev.shiftKey || ev.metakey ) 
+      return; 
 
     var self      = this;
     var content   = this.$el.find('.code').val();

@@ -81,20 +81,20 @@ var InkApp = Backbone.View.extend({
   handleKeyDown: function(ev){
 
     switch (ev.which) { 
-     case 65:                                     // [CMD + A] - Show actions
-      if ( ev.metaKey && $.ink.admin && $.ink.admin.edit.editing == "false" ){
+     case 65:                                    // [Ctrl + A] - Show menu / actions
+      if ( ev.ctrlKey && $.ink.admin && $.ink.admin.edit.editing == "false" ){
         ev.preventDefault();
         $.ink.admin.views.App.showActions();
       }  
       break;
-    case 76:                                      // [CMD + L] - Show login
-      if ( ev.metaKey && !$.ink.admin ){
+    case 76:                                      // [Ctrl + L] - Show login
+      if ( ev.ctrlKey && !$.ink.admin ){
         ev && ev.preventDefault();
         this.showLogin();
       }  
       break;
-    case 80:                                      // [CMD + P] - Toggle preview
-      if ( ev.metaKey && $.ink.admin ){
+    case 80:                                      // [Ctrl + P] - Toggle preview
+      if ( ev.ctrlKey && $.ink.admin ){
         ev.preventDefault();
         $.ink.admin.views.Edit.preview();
       }  
