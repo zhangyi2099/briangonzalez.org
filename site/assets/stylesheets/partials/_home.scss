@@ -19,10 +19,9 @@ body.home, body.posts{
 
           a, a:hover, a:visited{
             color: $text-color;
-            border-bottom: 1px solid $primary-color + 75;
+            border-bottom: 2px solid $primary-color + 75;
             line-height: 1.1;
             font-weight: normal;
-            @include border-radius(0);
 
             &:hover{ color: $primary-color; };
           }

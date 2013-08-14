@@ -56,7 +56,10 @@
             hyphens: auto;
   }
 
-  article img { width: 100%; }
+  article {
+    a, a:visited {   border-bottom: 2px solid $primary-color; }
+    img { width: 100%; }
+  }
 
   blockquote{
     border-left: 8px solid $primary-color;

@@ -1,8 +1,8 @@
 
-$z-controls: 100;
-$z-preview: 101;
-$z-zen-toggle: 103;
-
+$z-controls:    100;
+$z-preview:     101;
+$z-zen-toggle:  103;
+$save-timeout:  3000ms;
 
 .admin-edit-page{
   position: fixed; top: 0; right: 0; bottom: 0; left: 0;
@@ -45,7 +45,7 @@ $z-zen-toggle: 103;
       z-index: $z-controls + 1;
 
       &.animate{
-        @include single-transition(all, 1500ms);
+        @include single-transition(all, $save-timeout);
         height: 0;
       }
     }

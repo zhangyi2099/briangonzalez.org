@@ -113,7 +113,12 @@
 
     a:not(.admin-button){ color: $admin-red; }
 
-    &.output { text-align: left; background: $admin-darkgrey + 30; color: white;  }
+    &.output { 
+      text-align: left; background: $admin-darkgrey + 30; color: white;  
+      height: 100%;
+
+      @include query-at($nav-breakpoint) { height: auto; }
+    }
 
     // Drag Uploader //
     .drag-area{
