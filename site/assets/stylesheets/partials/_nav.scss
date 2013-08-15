@@ -2,8 +2,6 @@
 nav{
   float: left;
   width: 100%;
-  @extend .animated;
-  @extend .fadeInDown;
 
   @include query-at($nav-breakpoint){ 
     margin: $base-space 0;
@@ -39,7 +37,7 @@ nav{
       padding: $base-space/2.5 0;
       border-top: 1px solid rgba(white, 0.1);
 
-      @include query-at($nav-breakpoint){
+      @include query-at($nav-breakpoint) {
         margin-right: 1em;
         margin-top: none;
         padding: 0;
@@ -49,10 +47,7 @@ nav{
         border: none;
       }
 
-      @include query-at($main-breakpoint){
-        padding: 0.2em 0;
-        display: block;
-      }
+      @include query-at($main-breakpoint) { display: block; }
 
       a, a:hover, a:visited{
         font-size: 0.7em;
@@ -74,24 +69,23 @@ nav{
           width: auto; height: auto; 
           display: inline; 
           color: $text-color + 60;
+          line-height: 2.2;
+          padding: 5px;
+          border: none;
 
           &.current, &:hover{ 
-            color: $primary-color; 
-            border-bottom: 1px solid rgba($primary-color, 0.2); 
-            border-top: 1px solid rgba($primary-color, 0.2);
+            color: white;
+            background: $dark-color; 
           }
         }
       }
 
       @include query-at($main-breakpoint){
         a, a:hover, a:visited{
-          padding: 0;
           display: inline-block;
-          border: none;
+          padding: 2px 7px;
 
           &.current, &:hover{ 
-            border: none;
-            color: $primary-color;
             @include transform(translateX(2px))
           }
         }
