@@ -9,7 +9,7 @@ description:  Ever wondered what 'xargs' was in a shell command? Here's a small 
   = @description
 
 :markdown
-  From the `man` page for `xargs`:
+  From the `man` page for `xargs`: 
   
   > The xargs utility reads space, tab, newline and end-of-file 
   > delimited strings from the standard input and executes utility with the strings as arguments.
@@ -25,10 +25,12 @@ description:  Ever wondered what 'xargs' was in a shell command? Here's a small 
       http://code.jquery.com/jquery-2.0.2.min.js
       http://underscorejs.org/underscore-min.js
       http://backbonejs.org/backbone.js
+    {:class=bash} 
 
   Then, download all of the files like so:
   
       xargs -P 4 -n 1 curl -O < urls.txt
+    {:class=no-highlight} 
 
   Pretty cool, eh? Let's break this command down.  The `<` denotes input redirection, i.e. it sends the contents of `urls.txt` to `xargs`. Next, `xargs` takes the lines inside of `urls.txt` and passes them as command-line arguments to `curl`. The `-P 4` tells `xargs` to use 4 threads and the `-n 1` says pass all of the text as one argument.
 
@@ -36,15 +38,18 @@ description:  Ever wondered what 'xargs' was in a shell command? Here's a small 
   Sometimes you need an easy way to package some CSS files, quick and dirty style. If you're current directory has several CSS files in it, the following command will recurse and pipe the contents of all of the CSS files into a new file called `all.css`
 
       find . -name '*.css' -not -name "all.css"  | xargs cat > all.css
+    {:class=bash}  
 
   ## Count lines in files
   Suppose you had 3 text files in you current working directory, `lipsum.txt`, `lipsum_2.txt`, and `urls.txt` and you wanted to count all of the lines in each file and total them up. The following command will get you on your way: 
 
       ls -1 *.txt | xargs wc -l
+    {:class=bash}  
 
   The output might look something like this:
 
-          18 lipsum.txt
-          18 lipsum_2.txt
-           2 urls.txt
-          38 total
+      18 lipsum.txt
+      18 lipsum_2.txt
+       2 urls.txt
+      38 total
+    {:class=bash}  

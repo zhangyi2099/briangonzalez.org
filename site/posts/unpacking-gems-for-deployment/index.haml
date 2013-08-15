@@ -11,6 +11,7 @@ date:     June 17, 2013
   [Bundler](http://gembundler.com) makes the process dead simple. Make sure you have _bundler_ installed: 
       
       gem install bundler
+    {:class=bash} 
 
   then make sure you have a valid `Gemfile` with all of your app's dependencies in it.
 
@@ -19,7 +20,9 @@ date:     June 17, 2013
   Unpacking all of your gems is dead simple:
 
       bundle install --deployment
+    {:class=bash} 
   
   This will unpack all of your gems into `./vendor/bundle`. If you want to unpack your gems into a specific location, use the `--path` command-line switch:
 
       bundle install --deployment --path gems/go/here
+    {:class=bash}

@@ -1,5 +1,5 @@
 ---
-title:        Saving email addresses to a Google Drive spreadsheet using Ruby 
+title:        Google Drive + Ruby 
 author:       Brian G.
 date:         August 06, 2013
 description:  How to save email addresses to a Google Drive spreadsheet using Ruby.
@@ -21,6 +21,7 @@ description:  How to save email addresses to a Google Drive spreadsheet using Ru
       # where 8675309abcdef is the spreadsheet key
       g = GoogleDocsEmailSaver.new('me@gmail.com', 'passwd123456', '8675309abcdef') 
       g.save_email('person.who@justsignedup.com')
+    {:class=ruby}
 
   Once you're done capturing email addresses, it's incredibly easy to export all of them to a CSV file from the Google Drive interface.
 

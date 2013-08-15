@@ -1,5 +1,5 @@
 ---
-title:        Automatically running a Grunt task before pushing to your remote git repository
+title:        Gruntjs tasks and git pre-push
 author:       Brian G.
 date:         July 23, 2013
 description:  How to automatically run a Grunt task before pushing to your remote git repository.
@@ -15,6 +15,7 @@ description:  How to automatically run a Grunt task before pushing to your remot
 
       touch .git/hooks/pre-push      # create the file; hooks directory location may vary 
       chmod a+x .git/hooks/pre-push  # make it executable
+    {:class=bash}  
 
   Next, place the following code inside the `pre-push` file and paste in the following code:
 
@@ -56,7 +57,8 @@ description:  How to automatically run a Grunt task before pushing to your remot
         fi
       
         echo "Complete."
-      fi  
+      fi
+    {:class=bash}  
 
   The code here is actually pretty straight-forward: any time we run `git push`, the `pre-push` script gets executed. The script counts the amount of uncommitted changes, stashes the changes, runs the default grunt task and if the grunt task fails, the stash is popped and we `exit 1` which tells git to fail the `push` command. If the grunt task does not fail, the push continues on.
 
