@@ -17,11 +17,11 @@ body {
     content: '';
     background: transparent;
     position: fixed; top: 0; right: 0; bottom: 0; left: 0;
-    border: 1em solid $lightgrey - 10;
     pointer-events: none;
 
-    border: none;
-    @include query-at($nav-breakpoint){ border: 12px solid $super-lightgrey }
+    @include query-at($nav-breakpoint){ 
+      border-top: 5px solid #333;
+    }
   }
   
   font: {

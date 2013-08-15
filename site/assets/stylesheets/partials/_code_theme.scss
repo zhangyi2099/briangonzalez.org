@@ -1,9 +1,11 @@
 /* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
 
 pre code {
-  border: 1px solid $super-lightgrey;
-  background: $super-lightgrey + 3; 
-  @include border-radius(2px);
+  border: 1px solid $lightgrey;
+  background: $lightgrey + 30; 
+  padding: 0.5em;
+  @include box-shadow( inset -1px -1px 30px rgba(black,0.03) );
+  @include border-radius(3px);
 }
 
 .tomorrow-comment, pre .comment, pre .title {
@@ -36,13 +38,6 @@ pre code {
 
 .tomorrow-purple, pre .keyword, pre .javascript .function {
   color: #8959a8;
-}
-
-pre code {
-  display: block;
-  background: white;
-  color: #4d4d4c;
-  padding: 0.5em;
 }
 
 pre .coffeescript .javascript,
