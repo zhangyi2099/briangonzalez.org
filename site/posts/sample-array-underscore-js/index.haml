@@ -7,7 +7,7 @@ description:  A post describing two techniques for sampling an array using under
 
 :markdown
 
-  You have an array of names, and you want to write a function that takes an array of name, and returns a name at random. Note that this functionality [may at some point be added](https://github.com/jashkenas/underscore/pull/963) to underscore.js core.
+  You have an array of names, and you want to write a function that accepts said array and returns a name at random. Note that this functionality [may at some point be added](https://github.com/jashkenas/underscore/pull/963) to underscore.js core.
 
       var names = ['Bob', 'Kelly', 'Sue'];
 
@@ -36,3 +36,7 @@ description:  A post describing two techniques for sampling an array using under
       function sample(array){
         return _.shuffle(array)[0]
       }
+
+  ## Thoughts?
+
+  Do you have another method? Let me know on [Twitter](https://twitter.com/brianmgonzalez).
