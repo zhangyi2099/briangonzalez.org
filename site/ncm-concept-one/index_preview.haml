@@ -1,0 +1,20 @@
+---
+title:        NCM Engineering Corportation
+layout:       minimal
+description:  This is your page's meta description.
+---
+
+<p data-height="300" data-theme-id="81" data-slug-hash="755bc39b6ff1df3e05142cb188e29c46" data-user="briangonzalez" data-default-tab="result" class='codepen'></p>
+
+- content_for :styles do
+  :css
+    html, body, iframe { position: fixed; top: 0; right: 0; left: 0; bottom: 0; }
+    iframe{ z-index: 100 }
+
+- content_for :javascripts do
+  :javascript
+    $(document).ready(function(){ 
+      $('p.codepen').attr('data-height', $(window).innerHeight() ) 
+    });
+
+    $.getScript('http://codepen.io/assets/embed/ei.js')

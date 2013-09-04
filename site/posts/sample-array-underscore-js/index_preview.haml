@@ -1,0 +1,38 @@
+---
+title:        Sample an array using underscore.js
+author:       Brian G.
+date:         August 28, 2013
+description:  A post describing two techniques for sampling an array using underscore.js.
+---
+
+:markdown
+
+  You have an array of names, and you want to write a function that takes an array of name, and returns a name at random. Note that this functionality [may at some point be added](https://github.com/jashkenas/underscore/pull/963) to underscore.js core.
+
+      var names = ['Bob', 'Kelly', 'Sue'];
+
+      function sample(array){ 
+        /* let's build this */ 
+      };
+
+      sample(names); 
+      // => 'Bob'
+      
+      sample(names); 
+      // => 'Sue'
+
+  __Method 1 - using \_.random() __
+
+  The first method relies on underscore's [random](http://underscorejs.org/#random) method, which takes two arguments, a `min` and a `max`. The idea here is to generate a random index, then return the value in the array at that index.
+
+      function sample(array){
+        return array[ _.random(0, array.length-1) ]
+      }
+
+  __Method 2 - using \_.shuffle() __
+
+  The second method relies on underscore's [shuffle](http://underscorejs.org/#shuffle) method, which takes an array, and returns a copy of the array, shuffled using the [Fisher-Yates shuffle algorithm](http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle).
+
+      function sample(array){
+        return _.shuffle(array)[0]
+      }

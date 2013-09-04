@@ -7,7 +7,7 @@ body.home, body.posts{
       border-bottom: 1px solid $super-lightgrey; 
 
       h2 {
-        @include rhythm(4,0,0,4, $h2);
+        @include rhythm(6,0,0,3, $h2);
       }
 
       &:last-of-type      { border: 0; padding-bottom: 0; }
