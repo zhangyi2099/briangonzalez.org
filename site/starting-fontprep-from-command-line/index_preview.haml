@@ -17,7 +17,12 @@ flags:    ['titleize']                       # Only if titleizing. Remove this f
   ## Starting FontPrep
   Paste the following command into Terminal.app:
 
-      cd /Applications/FontPrep.app/Contents/Resources/fontprep_server && ruby app.rb
+      cd /Applications/FontPrep.app/Contents/Resources/fontprep_server \
+      && ruby app.rb
+
+  For version 3.0.0 and newer you must add the version to the command above, e.g.:
+      
+      cd /Appl...ruby app.rb VERSION=3.0.0 
 
   * If you see `[FONTPREP] Fontprep is now running on port 7500` then:
 
