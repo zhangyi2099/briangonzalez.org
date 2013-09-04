@@ -20,23 +20,29 @@ body{
     padding: 0; 
 
     header{
-      padding: 20px 40px;
+      padding: 40px;
       font-weight: 400;
       text-transform: uppercase;
-      font-size: 0.8em;
       letter-spacing: 2px;
       text-align: center;
       @include clearfix;
 
-      .github, span  { display: block; text-align: center; margin: 0.3em; }
-      .github        { float: none; background: #f6f6f6; padding: 0 10px; @include border-radius(2px) }
+      $font-size: 12px;
+      @include adjust-font-size-to($font-size);
+      @include rhythm(1,1,1,1);
+      @include adjust-leading-to(2);
+
+      .github, span  { display: block; text-align: center; margin: 0.3em; padding: 0 rhythm(1); }
+      .github        { 
+        float: none; background: #f6f6f6;  @include border-radius(2px);
+      }
       .github.iframe { background: none; } 
               
       img.anchor{ width: 2em; margin-right: 10px }
       
       @include query-at($breakpoint-1) {
         text-align: initial;
-        .github, span  { display: inline-block; text-align: initial; }
+        .github, span  { display: inline-block; text-align: initial; margin-top: rhythm(1); }
         .github  { float: right; }
         span      { float: left; }
       }
@@ -59,11 +65,15 @@ body{
         color: white; 
         text-transform: uppercase;
         letter-spacing: 3px;
-        font-size: 2em;
-        line-height: 1.5;
+        
+        $font-size: 42px;
+        @include adjust-font-size-to($font-size);
+        @include rhythm(1,0,0,1, $font-size);
 
         @include query-at($breakpoint-1){
-          font-size: 3.4em;
+        $font-size: 50px;
+        @include adjust-font-size-to($font-size);
+        @include rhythm(1,0,0,1, $font-size);
         }
       }
 
@@ -75,7 +85,14 @@ body{
         letter-spacing: 6px;
 
         &.black  { color: black; }
-        &.classy { font-size: 2em; font-weight: 300; font-style: normal; margin-bottom: 2em; margin-top: 0; }
+        &.classy { 
+          font-weight: 300; 
+          font-style: normal; 
+
+          $font-size: 26px;
+          @include adjust-font-size-to($font-size);
+          @include rhythm(0,0,0,2, $font-size);
+        }
       }
 
       .callout-group{
@@ -87,12 +104,16 @@ body{
       }
 
       a.callout-link {
-        padding: 0.2em 1.5em;
+        
+        $font-size: $base-font-size - 2px;
+        @include adjust-font-size-to($font-size);
+        margin-top: 0.5em;
+        padding: 1em rhythm(1, $font-size);
+
         background: rgba(white, 0.8);
         background: black;  
         color: white;          
         font-family: Menlo, Monaco, 'Courier New', sans;
-        font-size: 0.8em;
         display: inline-block;
         @include transition(all 250ms ease);
 
@@ -156,7 +177,7 @@ body{
     right: 1em;
     color: white;
     background: rgba(black, 0.9);
-    padding: 0.5em 0.75em;
+    padding: 1em;
     font-weight: bold;
     cursor: pointer;
     opacity: 0;
