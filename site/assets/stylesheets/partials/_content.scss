@@ -28,6 +28,8 @@
   h1{
     font-weight: 300;
     @include query-at($main-breakpoint) { text-align:left; }
+
+    &:first-of-type{ @include rhythm(0, 0, 0, 4, $h1) };
   }
 
   .title + h2, h1 + h2{

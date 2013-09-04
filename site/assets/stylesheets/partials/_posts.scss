@@ -7,8 +7,6 @@ body.posts{
 
       @include rhythm(0, 0, 0, 1);
 
-      h1 { @include rhythm(0, 0, 0, 4, $h1); }
-
       .meta{
         $font-size: $base-font-size - 6px;
         @include adjust-font-size-to($font-size);
