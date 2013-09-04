@@ -3,7 +3,7 @@
  div[role="main"]{
 
   // This little doo-dad handles our nav spacing.
-  margin-top: $base-space*4;
+  @include rhythm(14,0,0,0);
   @include query-at($nav-breakpoint) { margin-top: 0; }
 
   float:left;

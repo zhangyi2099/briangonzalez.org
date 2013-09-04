@@ -44,6 +44,7 @@ $header-z: 10;
     position: absolute; top: 0; left: 0; right: 0;
     z-index: $header-z;
     width: 100%;
+    @include rhythm(0,1,1,0);
 
     @include query-at($nav-breakpoint){
       width: 100%;
@@ -107,7 +108,11 @@ $header-z: 10;
     a.nav-icon-wrap{
       float: right;
       width: 50px;
-      i:before{ font-size: 1.8em; line-height: 1.9em; color: $base-headingfont-color; }
+      i:before{ 
+        color: $base-headingfont-color; 
+        @include adjust-font-size-to($base-font-size + 10px);
+        @include rhythm(1,0,0,1);
+      }
       @include query-at($nav-breakpoint){ display: none }
     }
 
