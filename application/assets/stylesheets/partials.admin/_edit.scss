@@ -14,7 +14,6 @@ $save-timeout:  3000ms;
     @include clearfix;
     @include box-shadow(0 3px 10px rgba($admin-lightgrey, 0.25) );
     z-index: $z-controls;
-    height: $base-space*2;
 
     a.control{
       float: left;
@@ -26,15 +25,12 @@ $save-timeout:  3000ms;
       color: white - 10;
       background: $admin-darkgrey;
       border-right: 1px solid rgba(white, 0.2);
-      padding: 12px 0;
       display: inline-block;
-      width: 3em;
+      padding: rhythm(3);
 
       &:hover{ color: white; background: $admin-darkgrey + 20; }
       &.highlight{ color: $admin-darkgrey + 30; }
 
-      @include query-at($nav-breakpoint)  { font-size: 22px; padding: 12px 0; }
-      @include query-at($main-breakpoint) { font-size: 24px; padding: 14px 0; }
     }
 
     .save-progress{

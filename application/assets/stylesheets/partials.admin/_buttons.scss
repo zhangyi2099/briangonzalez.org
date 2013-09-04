@@ -1,10 +1,10 @@
 a.admin-button, a.admin-button:visited {
 
   font-weight: bold;
-  padding:    0.8em 0;
   display:    inline-block;
-  margin:     0.75em 0 0 0;
   text-align: center;
+
+  @include rhythm(2,3,3,0);
 
   font-size: 110%;
   display: block;
@@ -21,8 +21,8 @@ a.admin-button, a.admin-button:visited {
 
   @include query-at($nav-breakpoint){
     display: inline-block;
-    margin:  0.4em 0.4em 0 0;
-    padding:    0.75em 4em;
+    // margin:  0.4em 0.4em 0 0;
+    // padding:    0.75em 4em;
   }
 }
 
