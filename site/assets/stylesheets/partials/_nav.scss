@@ -84,7 +84,6 @@ nav{
       @include query-at($main-breakpoint){
         a, a:hover, a:visited{
           display: inline-block;
-          padding: rhythm(1);
 
           &.current, &:hover{ 
             @include transform(translateX(2px))

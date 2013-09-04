@@ -3,7 +3,9 @@
 pre code {
   border: 1px solid $lightgrey;
   background: $lightgrey + 30; 
-  padding: 0.5em;
+  
+  @include rhythm(3);
+
   @include box-shadow( inset -1px -1px 30px rgba(black,0.03) );
   @include border-radius(3px);
 }
