@@ -16,6 +16,7 @@ description:  A simple explanation on how to write a grunt task for serving stat
   First off, install the [shelljs](https://github.com/arturadib/shelljs) module.
 
       npm install shelljs --save-dev
+  {:class=bash}
 
   Note, the `--save-dev` flag adds the dependency to your `package.json` file, making your life easier in the future. 
 
@@ -32,7 +33,9 @@ description:  A simple explanation on how to write a grunt task for serving stat
   Then start up the server with the following command:
       
       grunt serve
+  {:class=bash}
 
    In my case, I run the command like so, serving the `test` directory on port 5000:
       
       grunt serve --port=5000 --dir=test
+  {:class=bash}
