@@ -6,7 +6,10 @@ body.home, body.posts{
       padding-bottom: $base-space;
       border-bottom: 1px solid $super-lightgrey; 
 
-      & h2:not(:first-child) { margin-top: $base-space; }
+      h2 {
+        @include rhythm(4,0,0,4, $h2);
+      }
+
       &:last-of-type      { border: 0; padding-bottom: 0; }
 
       ul{
@@ -15,13 +18,14 @@ body.home, body.posts{
 
         li{
           list-style-type: none;
-          &:not(:first-child){ margin-top: $base-space/5 }
+          margin: 0;
 
           a, a:hover, a:visited{
             color: $text-color;
             border-bottom: 1px solid $primary-color;
-            line-height: 1.1;
             font-weight: normal;
+
+            @include rhythm(0,4,0,0);
 
             &:hover{ color: $primary-color; };
           }
@@ -29,7 +33,10 @@ body.home, body.posts{
           time{
             display: block;
             color: $lightgrey - 20;
-            font-size: 0.75em;
+            
+            $font-size: $base-font-size - 4px;
+            @include adjust-font-size-to($font-size);
+            @include rhythm(1,0,0,3);
           }
 
         }

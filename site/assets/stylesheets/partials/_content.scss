@@ -26,11 +26,7 @@
   }
 
   h1{
-    font-size: 1.2em;
     font-weight: 300;
-
-    @include query-at($breakpoint-1)    { font-size: 2.3em }
-    @include query-at($breakpoint-2)    { font-size: 2.5em }
     @include query-at($main-breakpoint) { text-align:left; }
   }
 
@@ -39,14 +35,13 @@
   }
   
   h2{
-    font-size: 1.2em;
     font-weight: 900;
     display: inline-block;
     width: 100%;
   }
 
   h6{
-    margin-bottom: $base-space/3;
+    @include rhythm(1, 0, 0, 3, $base-font-size);
   }
 
   p          { 

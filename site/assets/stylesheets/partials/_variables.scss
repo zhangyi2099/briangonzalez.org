@@ -34,12 +34,22 @@ $blockquote-border-color:     $primary-color;
 $button-border-radius:        2px;
 $button-color:                white;
 
-// TYPOGRAPHY ====================================================
-$base-font-size:              1em;              
-$base-line-height:            2em;     
+// TYPOGRAPHY ====================================================   
 $base-font-weight:            400;
 $base-font:                   Lato, Arial, sans-serif, sans;
 $base-heading-font:           Lato, Arial, sans-serif, sans;
 $code-font:                   Monaco, 'Courier New', 'Courier', Consolas, Menlo, Monaco, monospace, serif;
 $base-heading-fontweight:     bold;
 $base-headingfont-color:      #333;
+
+$h1:                          42px;
+$h2:                          24px;
+$h3:                          20px;
+$h4:                          18px;
+$h5:                          $base-font-size;
+$h6:                          $base-font-size - 2px;
+
+
+// VERTICAL RHYTHM ================================================
+$base-font-size:                  16px;       // 1em
+$base-line-height:                6px;       // 1.5em

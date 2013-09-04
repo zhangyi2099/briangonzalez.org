@@ -3,14 +3,17 @@ body.posts{
   div[role="main"]{
 
     .title{
-      margin-bottom: $base-space;
       border-bottom: 0;
 
-      h1 { margin-bottom: $base-space/2; }
-      h2 { font-size: 1.5em; }
+      @include rhythm(0, 0, 0, 1);
+
+      h1 { @include rhythm(0, 0, 0, 4, $h1); }
 
       .meta{
-        font-size: 0.6em;
+        $font-size: $base-font-size - 6px;
+        @include adjust-font-size-to($font-size);
+        @include rhythm(1, 0, 0, 1, $font-size);
+
         font-weight: 400;
         color: $lightgrey - 50;
         letter-spacing: 3px;
@@ -19,8 +22,11 @@ body.posts{
 
         time, .author   { text-transform: uppercase;  }
         .slash        { color: $text-color + 80;  
-                          display: inline-block; margin: 0 0.4em; font-weight: 200; 
-                          font-size: 0.9em; letter-spacing: 1px;
+                          display: inline-block; 
+                          margin-left:0.4em; 
+                          margin-right:0.4em; 
+                          font-weight: 200; 
+                          letter-spacing: 1px;
                         }
       }
     }
