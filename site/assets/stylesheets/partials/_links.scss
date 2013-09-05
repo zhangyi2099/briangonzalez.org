@@ -21,4 +21,6 @@ a, a:visited{
 }
 
 // Link Transitions.
-a{ @include single-transition(all, 0.5s) }
+a{ 
+  @include single-transition(all, 200ms) 
+}

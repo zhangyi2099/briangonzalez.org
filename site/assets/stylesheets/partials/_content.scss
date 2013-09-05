@@ -54,7 +54,7 @@
   }
 
   article {
-    a, a:visited {   border-bottom: 2px solid $primary-color; }
+    a, a:visited { border-bottom: 1px solid rgba($primary-color, 0.5); }
     img { width: 100%; }
   }
 

@@ -62,7 +62,7 @@ address {
   @include adjust-font-size-to($base-font-size);
 
   @include adjust-leading-to(5);
-  @include rhythm(1, 0, 0, 4, $base-font-size);
+  @include rhythm(3, 0, 0, 3, $base-font-size);
 
   clear: both;
   @include clearfix;
@@ -150,8 +150,6 @@ code,
 kbd,
 samp {
   font-family:  $code-font;
-  font-size:    $base-font-size;
-  line-height : $base-line-height; 
 }
 
 pre, code {
